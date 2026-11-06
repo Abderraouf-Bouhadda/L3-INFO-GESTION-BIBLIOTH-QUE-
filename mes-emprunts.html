@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Mes emprunts — Bibliothèque de l’ESST. Simulation statique des espaces étudiant et administration."
+    />
+    <meta name="theme-color" content="#3c6dac" />
+    <title>Mes emprunts — Bibliothèque ESST</title>
+    <link rel="icon" type="image/png" href="assets/logo/ESST-logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&amp;family=Playfair+Display:wght@400;500&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#contenu">Aller au contenu</a>
+    <header class="site-header">
+      <div class="site-header__inner container">
+        <a class="site-header__logo" href="index.html" aria-label="ESST — Accueil">
+          <img
+            src="assets/logo/ESST-logo.png"
+            width="450"
+            height="200"
+            alt="ESST — École Supérieure des Sciences et Technologies"
+          />
+        </a>
+        <input
+          class="site-header__toggle"
+          type="checkbox"
+          id="menu-mobile"
+          aria-label="Afficher ou masquer le menu"
+          aria-controls="navigation-principale"
+        />
+        <label class="site-header__burger" for="menu-mobile">
+          <span></span><span></span><span></span>
+          <span class="visually-hidden">Menu principal</span>
+        </label>
+        <nav class="site-header__nav" id="navigation-principale" aria-label="Navigation principale">
+          <a href="catalogue.html">Catalogue</a>
+          <a href="mes-emprunts.html">Mes ressources</a>
+          <a href="aide.html">Aide</a>
+          <a class="site-header__switch" href="index.html#choisir-espace">Changer d’espace</a
+          >
+          <details class="dropdown site-header__account">
+            <summary>Mon espace ESST</summary>
+            <div class="dropdown__menu">
+              <a href="catalogue.html">Étudiant</a>
+              <a href="tableau-de-bord.html">Admin</a>
+              <a href="profil-etudiant.html">Mon profil</a>
+              <a href="connexion.html">Se connecter</a>
+              <a href="inscription.html">Créer mon compte ESST</a>
+            </div>
+          </details>
+        </nav>
+      </div>
+    </header>
+
+    <div class="workspace container">
+      <aside class="sidebar">
+        <p class="sidebar__label">Mon espace ESST</p>
+        <nav class="sidebar__nav" aria-label="Menu étudiant">
+          <a class="sidebar__link" href="accueil.html">Accueil ESST</a>
+          <a class="sidebar__link" href="catalogue.html">Catalogue</a>
+          <a class="sidebar__link active" href="mes-emprunts.html" aria-current="page">Mes emprunts</a
+          >
+          <a class="sidebar__link" href="historique.html">Historique</a>
+          <a class="sidebar__link" href="mes-reservations.html">Mes réservations</a
+          >
+          <a class="sidebar__link" href="mes-favoris.html">Mes favoris</a>
+          <a class="sidebar__link" href="mes-avis.html">Mes avis</a>
+          <a class="sidebar__link" href="profil-etudiant.html">Mon profil</a>
+        </nav>
+        <section class="sidebar__note" aria-label="Bibliothèque ESST">
+          <h2>Bibliothèque ESST</h2>
+          <p>Vos ressources pour les cours, les projets et la recherche.</p>
+        </section>
+      </aside>
+
+      <main class="page-content" id="contenu" tabindex="-1">
+        <div class="page-heading">
+          <div>
+            <h1>Mes emprunts</h1>
+            <p class="page-heading__description">
+              Vos ouvrages empruntés à la bibliothèque ESST.
+            </p>
+          </div>
+        </div>
+        <div class="notice notice--success inline-result" id="confirmation">
+          <span class="notice__title">Démonstration confirmée</span>
+          <p>
+            Votre demande d’emprunt ou de renouvellement a été simulée. Aucune
+            donnée n’est enregistrée.
+          </p>
+        </div>
+        <div class="notice notice--success inline-result" id="retour-signale">
+          <span class="notice__title">Démonstration confirmée</span>
+          <p>
+            Le signalement de retour a été simulé. Le retour physique se fait au
+            comptoir. Aucune donnée n’est enregistrée.
+          </p>
+        </div>
+        <section class="stats-grid" aria-label="Indicateurs">
+          <article class="stat-card">
+            <span class="stat-card__label">Emprunts en cours</span>
+            <strong class="stat-card__value">03</strong>
+            <span class="stat-card__description">sur 5 autorisés</span>
+          </article>
+
+          <article class="stat-card">
+            <span class="stat-card__label">Prochain retour</span>
+            <strong class="stat-card__value">28 oct.</strong>
+            <span class="stat-card__description">dans 6 jours</span>
+          </article>
+
+          <article class="stat-card">
+            <span class="stat-card__label">Ressources consultées</span>
+            <strong class="stat-card__value">12</strong>
+            <span class="stat-card__description">depuis votre inscription</span>
+          </article>
+        </section>
+        <div class="notice">
+          <span class="notice__title">Votre prochaine échéance approche</span>
+          <p>
+            Clean Code est à retourner le 28 octobre. Vous pouvez demander un
+            renouvellement.
+          </p>
+        </div>
+        <div class="section-gap">
+          <div class="table-wrap">
+            <table class="data-table">
+              <caption class="visually-hidden">
+                Emprunts en cours
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">Ouvrage</th>
+                  <th scope="col">Emprunté le</th>
+                  <th scope="col">Retour prévu</th>
+                  <th scope="col">Statut</th>
+                  <th scope="col">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <a class="data-table__title" href="detail-livre.html">Clean Code</a
+                    >Robert C. Martin
+                  </td>
+                  <td>14 oct. 2026</td>
+                  <td>28 oct. 2026</td>
+                  <td>En cours</td>
+                  <td>
+                    <div class="data-table__actions">
+                      <a href="#renouveler-clean">Renouveler</a><span>·</span
+                      ><a href="#retourner-clean">Retourner</a>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <a class="data-table__title" href="detail-algorithmes.html">Introduction aux algorithmes</a
+                    >Thomas H. Cormen
+                  </td>
+                  <td>18 oct. 2026</td>
+                  <td>01 nov. 2026</td>
+                  <td>En cours</td>
+                  <td>
+                    <div class="data-table__actions">
+                      <a href="#renouveler-algorithms">Renouveler</a
+                      ><span>·</span
+                      ><a href="#retourner-algorithms">Retourner</a>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <a class="data-table__title" href="detail-design.html">Design of Everyday Things</a
+                    >Don Norman
+                  </td>
+                  <td>20 oct. 2026</td>
+                  <td>03 nov. 2026</td>
+                  <td>En cours</td>
+                  <td>
+                    <div class="data-table__actions">
+                      <a href="#renouveler-design">Renouveler</a><span>·</span
+                      ><a href="#retourner-design">Retourner</a>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="section-gap">
+          <a class="button" href="historique.html">Voir mon historique</a>
+        </div>
+        <div class="section-gap">
+          <div class="notice">
+            <span class="notice__title">Retour à l’école</span>
+            <p>
+              Déposez l’ouvrage au comptoir de la bibliothèque ESST. Le
+              personnel validera le retour.
+            </p>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner container">
+        <a class="site-footer__logo" href="index.html" aria-label="ESST — Accueil">
+          <img
+            src="assets/logo/ESST-logo.png"
+            width="450"
+            height="200"
+            alt="ESST — École Supérieure des Sciences et Technologies"
+          />
+        </a>
+        <p class="site-footer__description">
+          Bibliothèque de l’école · Étudiants · Enseignants · Personnel<br />
+          Simulation HTML/CSS · Données de démonstration
+        </p>
+        <nav class="site-footer__links" aria-label="Navigation de pied de page">
+          <a href="catalogue.html">Catalogue</a>
+          <a href="aide.html">Aide</a>
+          <a href="aide.html#contact">Contact</a>
+          <a href="composants.html">Composants &amp; fenêtres</a>
+        </nav>
+      </div>
+    </footer>
+
+    <section
+      class="modal"
+      id="renouveler-clean"
+      role="dialog"
+      aria-labelledby="renouveler-clean-titre"
+      tabindex="-1"
+    >
+      <div class="modal__dialog">
+        <a class="modal__close" href="#contenu" aria-label="Fermer la fenêtre">×</a
+        >
+        <h2 id="renouveler-clean-titre">Renouveler mon emprunt</h2>
+        <p class="text-muted">Prolongez votre lecture de Clean Code.</p>
+        <p class="modal__hint">
+          Nouvelle échéance : +14 jours, si aucune réservation n’est en attente.
+        </p>
+        <div class="actions">
+          <a class="button" href="#contenu">Revenir</a>
+          <a class="button button--primary" href="mes-emprunts.html#confirmation">Renouveler de 14 jours</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="modal"
+      id="retourner-clean"
+      role="dialog"
+      aria-labelledby="retourner-clean-titre"
+      tabindex="-1"
+    >
+      <div class="modal__dialog">
+        <a class="modal__close" href="#contenu" aria-label="Fermer la fenêtre">×</a
+        >
+        <h2 id="retourner-clean-titre">Retourner un ouvrage</h2>
+        <p class="text-muted">
+          Vous souhaitez rendre Clean Code à la bibliothèque.
+        </p>
+        <p class="modal__hint">
+          Déposez-le au comptoir ESST. Le personnel validera votre retour.
+        </p>
+        <div class="actions">
+          <a class="button" href="#contenu">Revenir</a>
+          <a class="button button--primary" href="mes-emprunts.html#retour-signale">Signaler le retour</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="modal"
+      id="renouveler-algorithms"
+      role="dialog"
+      aria-labelledby="renouveler-algorithms-titre"
+      tabindex="-1"
+    >
+      <div class="modal__dialog">
+        <a class="modal__close" href="#contenu" aria-label="Fermer la fenêtre">×</a
+        >
+        <h2 id="renouveler-algorithms-titre">Renouveler mon emprunt</h2>
+        <p class="text-muted">
+          Prolongez votre lecture de Introduction aux algorithmes.
+        </p>
+        <p class="modal__hint">
+          Nouvelle échéance : +14 jours, si aucune réservation n’est en attente.
+        </p>
+        <div class="actions">
+          <a class="button" href="#contenu">Revenir</a>
+          <a class="button button--primary" href="mes-emprunts.html#confirmation">Renouveler de 14 jours</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="modal"
+      id="retourner-algorithms"
+      role="dialog"
+      aria-labelledby="retourner-algorithms-titre"
+      tabindex="-1"
+    >
+      <div class="modal__dialog">
+        <a class="modal__close" href="#contenu" aria-label="Fermer la fenêtre">×</a
+        >
+        <h2 id="retourner-algorithms-titre">Retourner un ouvrage</h2>
+        <p class="text-muted">
+          Vous souhaitez rendre Introduction aux algorithmes à la bibliothèque.
+        </p>
+        <p class="modal__hint">
+          Déposez-le au comptoir ESST. Le personnel validera votre retour.
+        </p>
+        <div class="actions">
+          <a class="button" href="#contenu">Revenir</a>
+          <a class="button button--primary" href="mes-emprunts.html#retour-signale">Signaler le retour</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="modal"
+      id="renouveler-design"
+      role="dialog"
+      aria-labelledby="renouveler-design-titre"
+      tabindex="-1"
+    >
+      <div class="modal__dialog">
+        <a class="modal__close" href="#contenu" aria-label="Fermer la fenêtre">×</a
+        >
+        <h2 id="renouveler-design-titre">Renouveler mon emprunt</h2>
+        <p class="text-muted">
+          Prolongez votre lecture de Design of Everyday Things.
+        </p>
+        <p class="modal__hint">
+          Nouvelle échéance : +14 jours, si aucune réservation n’est en attente.
+        </p>
+        <div class="actions">
+          <a class="button" href="#contenu">Revenir</a>
+          <a class="button button--primary" href="mes-emprunts.html#confirmation">Renouveler de 14 jours</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="modal"
+      id="retourner-design"
+      role="dialog"
+      aria-labelledby="retourner-design-titre"
+      tabindex="-1"
+    >
+      <div class="modal__dialog">
+        <a class="modal__close" href="#contenu" aria-label="Fermer la fenêtre">×</a
+        >
+        <h2 id="retourner-design-titre">Retourner un ouvrage</h2>
+        <p class="text-muted">
+          Vous souhaitez rendre Design of Everyday Things à la bibliothèque.
+        </p>
+        <p class="modal__hint">
+          Déposez-le au comptoir ESST. Le personnel validera votre retour.
+        </p>
+        <div class="actions">
+          <a class="button" href="#contenu">Revenir</a>
+          <a class="button button--primary" href="mes-emprunts.html#retour-signale">Signaler le retour</a
+          >
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

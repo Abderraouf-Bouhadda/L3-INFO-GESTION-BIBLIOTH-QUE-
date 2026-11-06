@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Sécurité — Bibliothèque de l’ESST. Simulation statique des espaces étudiant et administration."
+    />
+    <meta name="theme-color" content="#3c6dac" />
+    <title>Sécurité — Bibliothèque ESST</title>
+    <link rel="icon" type="image/png" href="assets/logo/ESST-logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&amp;family=Playfair+Display:wght@400;500&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#contenu">Aller au contenu</a>
+    <header class="site-header">
+      <div class="site-header__inner container">
+        <a class="site-header__logo" href="index.html" aria-label="ESST — Accueil">
+          <img
+            src="assets/logo/ESST-logo.png"
+            width="450"
+            height="200"
+            alt="ESST — École Supérieure des Sciences et Technologies"
+          />
+        </a>
+        <input
+          class="site-header__toggle"
+          type="checkbox"
+          id="menu-mobile"
+          aria-label="Afficher ou masquer le menu"
+          aria-controls="navigation-principale"
+        />
+        <label class="site-header__burger" for="menu-mobile">
+          <span></span><span></span><span></span>
+          <span class="visually-hidden">Menu principal</span>
+        </label>
+        <nav class="site-header__nav" id="navigation-principale" aria-label="Navigation principale">
+          <a href="catalogue.html">Catalogue</a>
+          <a href="mes-emprunts.html">Mes ressources</a>
+          <a href="aide.html">Aide</a>
+          <a class="site-header__switch" href="index.html#choisir-espace">Changer d’espace</a
+          >
+          <details class="dropdown site-header__account">
+            <summary>Mon espace ESST</summary>
+            <div class="dropdown__menu">
+              <a href="catalogue.html">Étudiant</a>
+              <a href="tableau-de-bord.html">Admin</a>
+              <a href="profil-etudiant.html">Mon profil</a>
+              <a href="connexion.html">Se connecter</a>
+              <a href="inscription.html">Créer mon compte ESST</a>
+            </div>
+          </details>
+        </nav>
+      </div>
+    </header>
+
+    <div class="workspace container">
+      <aside class="sidebar">
+        <p class="sidebar__label">Gestion de la bibliothèque</p>
+        <nav class="sidebar__nav" aria-label="Menu administrateur">
+          <a class="sidebar__link" href="tableau-de-bord.html">Tableau de bord</a
+          >
+          <a class="sidebar__link" href="gestion-livres.html">Livres</a>
+          <a class="sidebar__link" href="etudiants-enseignants.html">Étudiants et enseignants</a
+          >
+          <a class="sidebar__link" href="roles-permissions.html">Rôles et permissions</a
+          >
+          <a class="sidebar__link" href="statistiques.html">Statistiques</a>
+          <a class="sidebar__link active" href="securite.html" aria-current="page">Sécurité</a
+          >
+        </nav>
+        <section class="sidebar__note" aria-label="Bibliothèque ESST">
+          <h2>Bibliothèque ESST</h2>
+          <p>
+            Un espace dédié au suivi des ressources et des prêts de l’école.
+          </p>
+        </section>
+      </aside>
+
+      <main class="page-content" id="contenu" tabindex="-1">
+        <div class="page-heading">
+          <div>
+            <h1>Sécurité du portail ESST</h1>
+            <p class="page-heading__description">
+              Protégez les comptes et les accès de la bibliothèque.
+            </p>
+          </div>
+        </div>
+        <div class="notice notice--success inline-result" id="confirmation">
+          <span class="notice__title">Démonstration confirmée</span>
+          <p>
+            L’action de sécurité a été simulée. Aucun mot de passe ni accès réel
+            n’a été modifié. Aucune donnée n’est enregistrée.
+          </p>
+        </div>
+        <div class="split-grid split-grid--equal">
+          <section class="panel">
+            <h2>Mot de passe administrateur</h2>
+            <form class="form" action="securite.html#confirmation" method="get">
+              <div class="field">
+                <label for="securite-actuel">Mot de passe actuel</label>
+                <input
+                  id="securite-actuel"
+                  type="password"
+                  placeholder="••••••••"
+                  required
+                  autocomplete="current-password"
+                />
+
+                <span class="field__error">Veuillez renseigner une valeur valide.</span
+                >
+              </div>
+
+              <div class="field">
+                <label for="securite-nouveau">Nouveau mot de passe</label>
+                <input
+                  id="securite-nouveau"
+                  type="password"
+                  placeholder="12 caractères minimum"
+                  required
+                  minlength="12"
+                  autocomplete="new-password"
+                />
+
+                <span class="field__error">Veuillez renseigner une valeur valide.</span
+                >
+              </div>
+
+              <div class="field">
+                <label for="securite-confirmation">Confirmer le mot de passe</label
+                >
+                <input
+                  id="securite-confirmation"
+                  type="password"
+                  placeholder="••••••••"
+                  required
+                  minlength="12"
+                  autocomplete="new-password"
+                />
+
+                <span class="field__error">Veuillez renseigner une valeur valide.</span
+                >
+              </div>
+
+              <div>
+                <button class="button button--primary" type="submit">
+                  Mettre à jour
+                </button>
+              </div>
+            </form>
+          </section>
+          <section class="panel">
+            <h2>Protection du compte</h2>
+            <span class="badge">Double authentification activée</span>
+            <p class="text-muted text-small section-gap">
+              Une vérification supplémentaire protège l’accès du personnel ESST.
+            </p>
+            <a class="button" href="#double-authentification">Gérer la double authentification</a
+            >
+            <h3 class="section-gap">Sessions actives</h3>
+            <p class="text-muted text-small">
+              Mac · Navigateur web<br />Session actuelle · Compte ESST
+            </p>
+            <a class="button" href="#fermer-sessions">Fermer les autres sessions</a
+            >
+          </section>
+        </div>
+        <div class="section-gap">
+          <div class="table-wrap">
+            <table class="data-table">
+              <caption class="visually-hidden">
+                Journal de sécurité de démonstration
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">Journal de sécurité</th>
+                  <th scope="col">Utilisateur</th>
+                  <th scope="col">Date</th>
+                  <th scope="col">Résultat</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Connexion au portail ESST</td>
+                  <td>Administrateur</td>
+                  <td>23 oct. · 09:15</td>
+                  <td>Réussie</td>
+                </tr>
+                <tr>
+                  <td>Modification d’un rôle</td>
+                  <td>Administrateur</td>
+                  <td>22 oct. · 16:30</td>
+                  <td>Confirmée</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner container">
+        <a class="site-footer__logo" href="index.html" aria-label="ESST — Accueil">
+          <img
+            src="assets/logo/ESST-logo.png"
+            width="450"
+            height="200"
+            alt="ESST — École Supérieure des Sciences et Technologies"
+          />
+        </a>
+        <p class="site-footer__description">
+          Bibliothèque de l’école · Étudiants · Enseignants · Personnel<br />
+          Simulation HTML/CSS · Données de démonstration
+        </p>
+        <nav class="site-footer__links" aria-label="Navigation de pied de page">
+          <a href="catalogue.html">Catalogue</a>
+          <a href="aide.html">Aide</a>
+          <a href="aide.html#contact">Contact</a>
+          <a href="composants.html">Composants &amp; fenêtres</a>
+        </nav>
+      </div>
+    </footer>
+
+    <section
+      class="modal"
+      id="double-authentification"
+      role="dialog"
+      aria-labelledby="double-authentification-titre"
+      tabindex="-1"
+    >
+      <div class="modal__dialog">
+        <a class="modal__close" href="#contenu" aria-label="Fermer la fenêtre">×</a
+        >
+        <h2 id="double-authentification-titre">Double authentification</h2>
+        <p class="text-muted">
+          Ce panneau illustre la protection du compte dans la maquette.
+        </p>
+        <p class="modal__hint">
+          Aucune configuration de sécurité réelle n’est exécutée.
+        </p>
+        <div class="actions">
+          <a class="button" href="#contenu">Revenir</a>
+          <a class="button button--primary" href="securite.html#confirmation">Fermer la démonstration</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="modal"
+      id="fermer-sessions"
+      role="dialog"
+      aria-labelledby="fermer-sessions-titre"
+      tabindex="-1"
+    >
+      <div class="modal__dialog">
+        <a class="modal__close" href="#contenu" aria-label="Fermer la fenêtre">×</a
+        >
+        <h2 id="fermer-sessions-titre">Fermer les autres sessions ?</h2>
+        <p class="text-muted">La fermeture des sessions sera simulée.</p>
+        <p class="modal__hint">
+          Votre session de démonstration reste accessible.
+        </p>
+        <div class="actions">
+          <a class="button" href="#contenu">Revenir</a>
+          <a class="button button--primary" href="securite.html#confirmation">Confirmer</a
+          >
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

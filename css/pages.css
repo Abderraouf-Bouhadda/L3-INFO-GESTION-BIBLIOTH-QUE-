@@ -1,0 +1,878 @@
+.home-hero {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: center;
+  gap: 3rem;
+  padding: 4rem;
+  background: #e9f2fb;
+}
+
+.home-hero__title {
+  margin-bottom: 1.5rem;
+  font-size: clamp(2.5rem, 3.8vw, 3.5rem);
+  line-height: 1.35;
+}
+
+.home-hero__description {
+  max-width: 36rem;
+  margin-bottom: 1.5rem;
+  color: #637180;
+  font-size: 1rem;
+}
+
+.home-hero__books {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 1.5rem;
+}
+
+.home-hero__books .book-cover {
+  min-height: 13rem;
+}
+
+.home-hero__books .book-cover__title {
+  font-size: 1.75rem;
+}
+
+.role-choice__label {
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+
+.role-choice__button {
+  min-width: 9rem;
+}
+
+.role-choice__button:not(.button--primary) {
+  border-color: #e5ebf1;
+  background: #ffffff;
+}
+
+.home-resources {
+  padding: 2.5rem;
+}
+
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.resource-card h3 {
+  color: #294f80;
+}
+
+.resource-card p {
+  color: #637180;
+  font-size: 0.75rem;
+}
+
+.auth-layout {
+  display: grid;
+  min-height: 56rem;
+  grid-template-columns: 5fr 7fr;
+  background: #ffffff;
+}
+
+.auth-intro {
+  padding: 4rem;
+  background: #e9f2fb;
+}
+
+.auth-intro__logo img {
+  width: 13rem;
+  margin-bottom: 1.5rem;
+}
+
+.auth-intro__title {
+  margin-bottom: 2rem;
+  font-size: clamp(2rem, 3vw, 3rem);
+  line-height: 1.4;
+}
+
+.auth-intro__description {
+  color: #637180;
+  font-size: 1rem;
+}
+
+.auth-intro .panel {
+  margin-top: 2rem;
+}
+
+.auth-intro .panel h3 {
+  color: #294f80;
+}
+
+.auth-main {
+  padding: 5rem 5.5rem;
+}
+
+.auth-main__back {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  color: #637180;
+  font-size: 0.75rem;
+}
+
+.auth-main__description {
+  margin-bottom: 1.5rem;
+  color: #637180;
+}
+
+.auth-main__options {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.auth-main__signup {
+  margin-block: 1.5rem;
+  font-size: 0.75rem;
+}
+
+.catalogue__controls {
+  margin-bottom: 1.5rem;
+}
+
+.catalogue__search-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.catalogue__search-form {
+  flex: 1;
+}
+
+.catalogue__search-row > .filters {
+  position: relative;
+  margin-top: 1.75rem;
+}
+
+.catalogue__search-row .filters__content {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 3;
+  width: min(44rem, 75vw);
+  box-shadow: 0 0.75rem 2rem rgb(40 55 71 / 12%);
+}
+
+.catalogue__search-row > .filters > summary {
+  min-height: 3.125rem;
+}
+
+.category-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-block: 1.5rem;
+}
+
+.category-tabs__label {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  padding: 0.6rem 1.125rem;
+  border-radius: 0.5rem;
+  background: #e9f2fb;
+  color: #294f80;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.category-tabs__label:hover {
+  background: #dae9f8;
+}
+
+#category-all:checked ~ .category-tabs .category-tabs__all,
+#category-info:checked ~ .category-tabs label[for="category-info"],
+#category-science-technologie:checked ~ .category-tabs label[for="category-science-technologie"],
+#category-chimie:checked ~ .category-tabs label[for="category-chimie"],
+#category-ecommerce:checked ~ .category-tabs label[for="category-ecommerce"] {
+  background: #3c6dac;
+  color: white;
+}
+
+#category-all:focus-visible ~ .category-tabs .category-tabs__all,
+#category-info:focus-visible ~ .category-tabs label[for="category-info"],
+#category-science-technologie:focus-visible ~ .category-tabs label[for="category-science-technologie"],
+#category-chimie:focus-visible ~ .category-tabs label[for="category-chimie"],
+#category-ecommerce:focus-visible ~ .category-tabs label[for="category-ecommerce"] {
+  outline: 3px solid #3c6dac;
+  outline-offset: 3px;
+}
+
+#category-info:checked ~ .catalogue__results .book-card:not(.book-card--info),
+#category-science-technologie:checked
+  ~ .catalogue__results
+  .book-card:not(.book-card--science-technologie),
+#category-chimie:checked ~ .catalogue__results .book-card,
+#category-ecommerce:checked
+  ~ .catalogue__results
+  .book-card:not(.book-card--ecommerce) {
+  display: none;
+}
+
+.catalogue__empty {
+  display: none;
+}
+
+#category-chimie:checked ~ .catalogue__results .catalogue__empty {
+  display: block;
+}
+
+.catalogue:has(#category-all:checked):has(#discipline-info:target)
+  .book-card:not(.book-card--info),
+.catalogue:has(#category-all:checked):has(#discipline-science-technologie:target)
+  .book-card:not(.book-card--science-technologie),
+.catalogue:has(#category-all:checked):has(#discipline-ecommerce:target)
+  .book-card:not(.book-card--ecommerce),
+.catalogue:has(#category-all:checked):has(#discipline-chimie:target)
+  .book-card {
+  display: none;
+}
+
+.catalogue:has(#category-all:checked):has(#discipline-chimie:target)
+  .catalogue__empty {
+  display: block;
+}
+
+.catalogue:has(.catalogue__discipline-anchor:target):has(#category-all:checked)
+  .category-tabs__all {
+  background: #e9f2fb;
+  color: #294f80;
+}
+
+.catalogue:has(#category-all:checked):has(#discipline-info:target)
+  label[for="category-info"],
+.catalogue:has(#category-all:checked):has(#discipline-science-technologie:target)
+  label[for="category-science-technologie"],
+.catalogue:has(#category-all:checked):has(#discipline-chimie:target)
+  label[for="category-chimie"],
+.catalogue:has(#category-all:checked):has(#discipline-ecommerce:target)
+  label[for="category-ecommerce"] {
+  background: #3c6dac;
+  color: white;
+}
+
+.catalogue__toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.75rem;
+}
+
+.catalogue__toolbar p {
+  margin: 0;
+}
+
+.catalogue__sort > summary {
+  color: #637180;
+}
+
+.catalogue__sort p {
+  max-width: 24rem;
+  padding-top: 0.5rem;
+  color: #637180;
+}
+
+.catalogue__page--two {
+  display: none;
+}
+
+.catalogue:has(#page-2:target) .catalogue__page--one {
+  display: none;
+}
+
+.catalogue:has(#page-2:target) .catalogue__page--two {
+  display: block;
+}
+
+.catalogue:has(#page-2:target) .pagination__link--one {
+  background: #e9f2fb;
+  color: #294f80;
+}
+
+.catalogue:has(#page-2:target) .pagination__link--two {
+  background: #3c6dac;
+  color: white;
+}
+
+.breadcrumb {
+  margin-bottom: 1.5rem;
+  color: #637180;
+  font-size: 0.75rem;
+}
+
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.breadcrumb li + li::before {
+  margin-right: 0.5rem;
+  content: "/";
+}
+
+.book-detail {
+  display: grid;
+  grid-template-columns: 18.75rem minmax(0, 1fr);
+  align-items: start;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.book-detail__cover {
+  min-height: 26.25rem;
+  aspect-ratio: auto;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.book-detail__cover .book-cover__title {
+  margin-top: 2.5rem;
+  font-size: 3rem;
+}
+
+.book-detail__content h2 {
+  margin-block: 1.5rem 1rem;
+  font-size: 1.875rem;
+}
+
+.book-detail__content > p {
+  color: #637180;
+}
+
+.book-detail__rating {
+  color: #294f80;
+}
+
+.book-detail__content .actions {
+  margin-block: 1.5rem 1rem;
+}
+
+.review-card + .review-card {
+  margin-top: 1.5rem;
+}
+
+.review-card__heading {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.review-card__heading h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.review-card__stars {
+  color: #294f80;
+  letter-spacing: 0.1em;
+}
+
+.review-card__text,
+.review-card__date {
+  color: #637180;
+  font-size: 0.75rem;
+}
+
+.favorite-item__remove {
+  display: block;
+  width: fit-content;
+  margin-top: 1.5rem;
+}
+
+.favorite-item__empty {
+  display: none;
+}
+
+.favorite-item:has(input:checked) .book-card,
+.favorite-item:has(input:checked) .favorite-item__remove {
+  display: none;
+}
+
+.favorite-item:has(input:checked) .favorite-item__empty {
+  display: block;
+}
+
+.favorite-item:has(input:focus-visible) .favorite-item__remove {
+  outline: 3px solid #3c6dac;
+  outline-offset: 3px;
+}
+
+.review-tabs {
+  margin-bottom: 1.5rem;
+}
+
+.review-tabs__labels {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.review-tabs__pending {
+  display: none;
+}
+
+#reviews-pending:checked ~ .review-tabs__published,
+#reviews-published:checked ~ .review-tabs__pending {
+  display: none;
+}
+
+#reviews-pending:checked ~ .review-tabs__pending {
+  display: block;
+}
+
+#reviews-published:checked
+  ~ .review-tabs__labels
+  label[for="reviews-published"],
+#reviews-pending:checked ~ .review-tabs__labels label[for="reviews-pending"] {
+  background: #3c6dac;
+  color: white;
+}
+
+.review-tabs > input:focus-visible ~ .review-tabs__labels {
+  outline: 3px solid #3c6dac;
+  outline-offset: 3px;
+}
+
+.rating {
+  display: flex;
+  width: fit-content;
+  flex-direction: row-reverse;
+  gap: 0.5rem;
+}
+
+.rating label {
+  color: #7387a1;
+  font-size: 2rem;
+  line-height: 1.5;
+}
+
+.rating label span[aria-hidden] {
+  display: none;
+}
+
+.rating label::before {
+  content: "☆";
+}
+
+.rating input:checked ~ label::before,
+.rating label:hover::before,
+.rating label:hover ~ label::before {
+  content: "★";
+}
+
+.rating label:hover,
+.rating label:hover ~ label,
+.rating input:checked ~ label {
+  color: #3c6dac;
+}
+
+.rating input:focus-visible + label {
+  outline: 3px solid #3c6dac;
+  outline-offset: 3px;
+}
+
+.review-card:target {
+  display: none;
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.6fr;
+  align-items: start;
+  gap: 1.5rem;
+}
+
+.profile-card h2 {
+  margin-block: 1.5rem 1rem;
+}
+
+.profile-card__details {
+  margin-block: 1rem;
+  font-size: 0.75rem;
+}
+
+.profile-card__stats {
+  margin-bottom: 1.5rem;
+  color: #294f80;
+  font-size: 0.75rem;
+}
+
+.book-editor {
+  display: grid;
+  grid-template-columns: 2.2fr 1fr;
+  align-items: start;
+  gap: 1.5rem;
+}
+
+.book-editor__cover {
+  min-height: 15.5rem;
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  background: #eef3f9;
+  color: #637180;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.875rem;
+  line-height: 1.4;
+}
+
+.book-editor__cover--filled {
+  background: #3c6dac;
+  color: white;
+}
+
+.book-editor__upload {
+  max-width: 100%;
+  color: #637180;
+  font-size: 0.75rem;
+}
+
+.book-editor__upload::file-selector-button {
+  margin-right: 0.5rem;
+  padding: 0.75rem;
+  border: 0;
+  border-radius: 0.5rem;
+  background: #e9f2fb;
+  color: #294f80;
+  font: inherit;
+  cursor: pointer;
+}
+
+.role-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.role-card h2 {
+  color: #294f80;
+  font-size: 1.25rem;
+}
+
+.role-card p {
+  color: #637180;
+  font-size: 0.75rem;
+}
+
+.permission__status::before {
+  content: "—";
+}
+
+input:checked ~ .permission__status::before {
+  content: "Autorisé";
+}
+
+.chart {
+  display: flex;
+  height: 12rem;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding-top: 1.5rem;
+}
+
+.chart__column {
+  display: flex;
+  height: 100%;
+  flex: 1;
+  flex-direction: column;
+  justify-content: end;
+  gap: 0.5rem;
+  color: #294f80;
+  font-size: 0.6875rem;
+}
+
+.chart__bar {
+  width: 100%;
+  max-width: 3.75rem;
+  border-radius: 0.35rem 0.35rem 0 0;
+  background: #3c6dac;
+}
+
+.chart__bar--18 {
+  height: 29%;
+}
+.chart__bar--26 {
+  height: 42%;
+}
+.chart__bar--21 {
+  height: 34%;
+}
+.chart__bar--34 {
+  height: 55%;
+}
+.chart__bar--28 {
+  height: 45%;
+}
+.chart__bar--52 {
+  height: 84%;
+  background: #91b4df;
+}
+.chart__bar--31 {
+  height: 50%;
+}
+.chart__bar--148 {
+  height: 42%;
+}
+.chart__bar--184 {
+  height: 52%;
+}
+.chart__bar--165 {
+  height: 47%;
+}
+.chart__bar--222 {
+  height: 63%;
+}
+.chart__bar--254 {
+  height: 72%;
+}
+.chart__bar--284 {
+  height: 81%;
+  background: #91b4df;
+}
+
+.chart__label {
+  color: #637180;
+}
+
+.discipline-list {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem 1.5rem;
+  margin: 0;
+  font-size: 0.75rem;
+}
+
+.discipline-list dd {
+  margin: 0;
+}
+
+.dashboard-tasks p {
+  margin-bottom: 1rem;
+  color: #637180;
+  font-size: 0.75rem;
+}
+
+.dashboard-tasks .button + .button {
+  margin-top: 1rem;
+}
+
+.help-layout,
+.components-page {
+  max-width: 75rem;
+  padding: 2.5rem;
+}
+
+.help-layout details + details {
+  margin-top: 1rem;
+}
+
+.help-layout summary {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.help-layout details p {
+  margin-block: 1rem 0;
+  color: #637180;
+}
+
+.components-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.empty-state {
+  padding: 2.5rem;
+  border: 1px solid #e5ebf1;
+  border-radius: 1rem;
+  background: white;
+}
+
+.empty-state h2 {
+  margin-bottom: 0.75rem;
+}
+
+.empty-state p {
+  color: #637180;
+}
+
+.inline-result {
+  display: none;
+  margin-bottom: 1.5rem;
+}
+
+.inline-result:target {
+  display: block;
+}
+
+@media (max-width: 74rem) {
+  .home-hero {
+    gap: 2rem;
+    padding: 2.5rem;
+  }
+
+  .home-hero__books .book-cover__title {
+    font-size: 1.5rem;
+  }
+
+  .resource-grid,
+  .role-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .auth-intro,
+  .auth-main {
+    padding: 2.5rem;
+  }
+
+  .profile-grid,
+  .book-editor {
+    grid-template-columns: 1fr;
+  }
+
+  .book-detail {
+    grid-template-columns: 14rem minmax(0, 1fr);
+    gap: 1.5rem;
+  }
+
+  .book-detail__cover {
+    min-height: 22rem;
+    padding: 1.5rem;
+  }
+
+  .book-detail__cover .book-cover__title {
+    font-size: 2.5rem;
+  }
+
+  .book-detail__content h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 48rem) {
+  .catalogue__search-row {
+    display: block;
+  }
+
+  .catalogue__search-row > .filters {
+    margin-top: 0.75rem;
+  }
+
+  .catalogue__search-row .filters__content {
+    position: static;
+    width: 100%;
+    box-shadow: none;
+  }
+
+  .home-hero {
+    grid-template-columns: 1fr;
+    padding: 2.5rem 1rem;
+  }
+
+  .home-hero__title {
+    font-size: clamp(2.4rem, 8vw, 3.5rem);
+  }
+
+  .home-hero__books {
+    gap: 0.75rem;
+  }
+
+  .home-hero__books .book-cover {
+    min-height: auto;
+  }
+
+  .home-hero__books .book-cover__title {
+    font-size: clamp(1.1rem, 4vw, 1.625rem);
+  }
+
+  .home-resources,
+  .help-layout,
+  .components-page {
+    padding: 1.5rem 1rem;
+  }
+
+  .resource-grid {
+    gap: 0.75rem;
+  }
+
+  .resource-card {
+    padding: 1rem;
+  }
+
+  .resource-card h3 {
+    font-size: 1rem;
+  }
+
+  .auth-layout {
+    display: block;
+    min-height: auto;
+  }
+
+  .auth-intro,
+  .auth-main {
+    padding: 2rem 1rem;
+  }
+
+  .auth-intro__logo,
+  .auth-intro .panel {
+    display: none;
+  }
+
+  .auth-intro__title {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+  }
+
+  .book-detail {
+    grid-template-columns: 1fr;
+  }
+
+  .book-detail__cover {
+    width: min(100%, 18.75rem);
+    min-height: 26.25rem;
+  }
+
+  .components-grid,
+  .role-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .chart {
+    gap: 0.75rem;
+  }
+}
+
+.role-entry {
+  background: #ffffff;
+}
+
+.role-entry__main {
+  display: grid;
+  min-height: 100vh;
+  min-height: 100svh;
+  place-items: center;
+  padding: 1rem;
+}
+
+.role-entry__choices {
+  justify-content: center;
+}
+

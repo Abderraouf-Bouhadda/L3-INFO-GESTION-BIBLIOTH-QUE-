@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Profil étudiant — Bibliothèque de l’ESST. Simulation statique des espaces étudiant et administration."
+    />
+    <meta name="theme-color" content="#3c6dac" />
+    <title>Profil étudiant — Bibliothèque ESST</title>
+    <link rel="icon" type="image/png" href="assets/logo/ESST-logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&amp;family=Playfair+Display:wght@400;500&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#contenu">Aller au contenu</a>
+    <header class="site-header">
+      <div class="site-header__inner container">
+        <a class="site-header__logo" href="index.html" aria-label="ESST — Accueil">
+          <img
+            src="assets/logo/ESST-logo.png"
+            width="450"
+            height="200"
+            alt="ESST — École Supérieure des Sciences et Technologies"
+          />
+        </a>
+        <input
+          class="site-header__toggle"
+          type="checkbox"
+          id="menu-mobile"
+          aria-label="Afficher ou masquer le menu"
+          aria-controls="navigation-principale"
+        />
+        <label class="site-header__burger" for="menu-mobile">
+          <span></span><span></span><span></span>
+          <span class="visually-hidden">Menu principal</span>
+        </label>
+        <nav class="site-header__nav" id="navigation-principale" aria-label="Navigation principale">
+          <a href="catalogue.html">Catalogue</a>
+          <a href="mes-emprunts.html">Mes ressources</a>
+          <a href="aide.html">Aide</a>
+          <a class="site-header__switch" href="index.html#choisir-espace">Changer d’espace</a
+          >
+          <details class="dropdown site-header__account">
+            <summary>Mon espace ESST</summary>
+            <div class="dropdown__menu">
+              <a href="catalogue.html">Étudiant</a>
+              <a href="tableau-de-bord.html">Admin</a>
+              <a href="profil-etudiant.html">Mon profil</a>
+              <a href="connexion.html">Se connecter</a>
+              <a href="inscription.html">Créer mon compte ESST</a>
+            </div>
+          </details>
+        </nav>
+      </div>
+    </header>
+
+    <div class="workspace container">
+      <aside class="sidebar">
+        <p class="sidebar__label">Mon espace ESST</p>
+        <nav class="sidebar__nav" aria-label="Menu étudiant">
+          <a class="sidebar__link" href="accueil.html">Accueil ESST</a>
+          <a class="sidebar__link" href="catalogue.html">Catalogue</a>
+          <a class="sidebar__link" href="mes-emprunts.html">Mes emprunts</a>
+          <a class="sidebar__link" href="historique.html">Historique</a>
+          <a class="sidebar__link" href="mes-reservations.html">Mes réservations</a
+          >
+          <a class="sidebar__link" href="mes-favoris.html">Mes favoris</a>
+          <a class="sidebar__link" href="mes-avis.html">Mes avis</a>
+          <a class="sidebar__link active" href="profil-etudiant.html" aria-current="page">Mon profil</a
+          >
+        </nav>
+        <section class="sidebar__note" aria-label="Bibliothèque ESST">
+          <h2>Bibliothèque ESST</h2>
+          <p>Vos ressources pour les cours, les projets et la recherche.</p>
+        </section>
+      </aside>
+
+      <main class="page-content" id="contenu" tabindex="-1">
+        <div class="page-heading">
+          <div>
+            <h1>Mon profil étudiant</h1>
+            <p class="page-heading__description">
+              Votre compte et vos informations à l’ESST.
+            </p>
+          </div>
+        </div>
+        <div class="notice notice--success inline-result" id="confirmation">
+          <span class="notice__title">Démonstration confirmée</span>
+          <p>
+            L’enregistrement de vos modifications a été simulé. Aucune donnée
+            n’est enregistrée.
+          </p>
+        </div>
+        <div class="profile-grid">
+          <section class="profile-card panel">
+            <span class="badge">RB · Étudiant</span>
+            <h2>Raouf Bouhadda</h2>
+            <p class="text-muted text-small">
+              École Supérieure des Sciences<br />et Technologies
+            </p>
+            <span class="badge">Compte actif</span>
+            <div class="profile-card__details">
+              Matricule · ESST-2025-0142<br />Spécialité · Informatique<br />Niveau
+              · Licence 3
+            </div>
+            <div class="profile-card__stats">
+              <a href="historique.html">12 ouvrages empruntés</a><br /><a href="mes-emprunts.html">3 prêts en cours</a
+              ><br /><a href="mes-reservations.html">2 réservations</a>
+            </div>
+            <a class="button" href="index.html">Se déconnecter</a>
+          </section>
+          <section class="panel">
+            <h2>Informations personnelles</h2>
+
+            <form class="form" action="profil-etudiant.html#confirmation" method="get">
+              <div class="form__row">
+                <div class="field">
+                  <label for="profil-prenom">Prénom</label>
+                  <input
+                    id="profil-prenom"
+                    type="text"
+                    placeholder=""
+                    value="Raouf"
+                    required
+                    autocomplete="given-name"
+                  />
+
+                  <span class="field__error">Veuillez renseigner une valeur valide.</span
+                  >
+                </div>
+
+                <div class="field">
+                  <label for="profil-nom">Nom</label>
+                  <input
+                    id="profil-nom"
+                    type="text"
+                    placeholder=""
+                    value="Bouhadda"
+                    required
+                    autocomplete="family-name"
+                  />
+
+                  <span class="field__error">Veuillez renseigner une valeur valide.</span
+                  >
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="profil-email">Adresse e-mail ESST</label>
+                <input
+                  id="profil-email"
+                  type="email"
+                  placeholder=""
+                  value="raouf.bouhadda@example.com"
+                  required
+                  autocomplete="email"
+                />
+
+                <span class="field__error">Veuillez renseigner une valeur valide.</span
+                >
+              </div>
+
+              <div class="form__row">
+                <div class="field">
+                  <label for="profil-filiere">Spécialité</label>
+                  <select id="profil-filiere">
+                    <option>Informatique</option>
+                    <option>Science et technologie</option>
+                    <option>Chimie</option>
+                    <option>E-commerce</option>
+                  </select>
+                </div>
+
+                <div class="field">
+                  <label for="profil-niveau">Niveau</label>
+                  <select id="profil-niveau">
+                    <option>Licence 3</option>
+                    <option>Licence 2</option>
+                    <option>Licence 1</option>
+                    <option>Master</option>
+                  </select>
+                </div>
+              </div>
+              <fieldset>
+                <legend>Notifications</legend>
+                <label class="checkbox" for="notif-retours"><input id="notif-retours" type="checkbox" checked />Rappels
+                  de retour</label
+                >
+                <label class="checkbox" for="notif-reservations"><input id="notif-reservations" type="checkbox" checked/>Disponibilité des réservations</label
+                >
+              </fieldset>
+              <div>
+                <button class="button button--primary" type="submit">
+                  Enregistrer les modifications
+                </button>
+              </div>
+              <div>
+                <a class="button" href="#changer-mot-de-passe">Changer le mot de passe</a
+                >
+              </div>
+            </form>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner container">
+        <a class="site-footer__logo" href="index.html" aria-label="ESST — Accueil">
+          <img
+            src="assets/logo/ESST-logo.png"
+            width="450"
+            height="200"
+            alt="ESST — École Supérieure des Sciences et Technologies"
+          />
+        </a>
+        <p class="site-footer__description">
+          Bibliothèque de l’école · Étudiants · Enseignants · Personnel<br />
+          Simulation HTML/CSS · Données de démonstration
+        </p>
+        <nav class="site-footer__links" aria-label="Navigation de pied de page">
+          <a href="catalogue.html">Catalogue</a>
+          <a href="aide.html">Aide</a>
+          <a href="aide.html#contact">Contact</a>
+          <a href="composants.html">Composants &amp; fenêtres</a>
+        </nav>
+      </div>
+    </footer>
+
+    <section
+      class="modal"
+      id="changer-mot-de-passe"
+      role="dialog"
+      aria-labelledby="changer-mot-de-passe-titre"
+      tabindex="-1"
+    >
+      <div class="modal__dialog">
+        <a class="modal__close" href="#contenu" aria-label="Fermer la fenêtre">×</a
+        >
+        <h2 id="changer-mot-de-passe-titre">Changer le mot de passe</h2>
+
+        <form class="form" action="profil-etudiant.html#confirmation" method="get">
+          <div class="field">
+            <label for="profil-ancien">Mot de passe actuel</label>
+            <input
+              id="profil-ancien"
+              type="password"
+              placeholder=""
+              required
+              autocomplete="current-password"
+            />
+
+            <span class="field__error">Veuillez renseigner une valeur valide.</span
+            >
+          </div>
+
+          <div class="field">
+            <label for="profil-nouveau">Nouveau mot de passe</label>
+            <input
+              id="profil-nouveau"
+              type="password"
+              placeholder="8 caractères minimum"
+              required
+              minlength="8"
+              autocomplete="new-password"
+            />
+
+            <span class="field__error">Veuillez renseigner une valeur valide.</span
+            >
+          </div>
+
+          <div class="field">
+            <label for="profil-confirmer">Confirmer le mot de passe</label>
+            <input
+              id="profil-confirmer"
+              type="password"
+              placeholder=""
+              required
+              minlength="8"
+              autocomplete="new-password"
+            />
+
+            <span class="field__error">Veuillez renseigner une valeur valide.</span
+            >
+          </div>
+
+          <button class="button button--primary" type="submit">
+            Mettre à jour
+          </button>
+        </form>
+      </div>
+    </section>
+  </body>
+</html>

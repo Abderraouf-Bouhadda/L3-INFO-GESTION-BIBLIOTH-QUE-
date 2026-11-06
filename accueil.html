@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Accueil ESST — Bibliothèque de l’ESST. Simulation statique des espaces étudiant et administration."
+    />
+    <meta name="theme-color" content="#3c6dac" />
+    <title>Accueil ESST — Bibliothèque ESST</title>
+    <link rel="icon" type="image/png" href="assets/logo/ESST-logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&amp;family=Playfair+Display:wght@400;500&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#contenu">Aller au contenu</a>
+    <header class="site-header">
+      <div class="site-header__inner container">
+        <a class="site-header__logo" href="index.html" aria-label="ESST — Accueil">
+          <img
+            src="assets/logo/ESST-logo.png"
+            width="450"
+            height="200"
+            alt="ESST — École Supérieure des Sciences et Technologies"
+          />
+        </a>
+        <input
+          class="site-header__toggle"
+          type="checkbox"
+          id="menu-mobile"
+          aria-label="Afficher ou masquer le menu"
+          aria-controls="navigation-principale"
+        />
+        <label class="site-header__burger" for="menu-mobile">
+          <span></span><span></span><span></span>
+          <span class="visually-hidden">Menu principal</span>
+        </label>
+        <nav class="site-header__nav" id="navigation-principale" aria-label="Navigation principale">
+          <a href="catalogue.html">Catalogue</a>
+          <a href="mes-emprunts.html">Mes ressources</a>
+          <a href="aide.html">Aide</a>
+          <a class="site-header__switch" href="index.html#choisir-espace">Changer d’espace</a
+          >
+          <details class="dropdown site-header__account">
+            <summary>Mon espace ESST</summary>
+            <div class="dropdown__menu">
+              <a href="catalogue.html">Étudiant</a>
+              <a href="tableau-de-bord.html">Admin</a>
+              <a href="profil-etudiant.html">Mon profil</a>
+              <a href="connexion.html">Se connecter</a>
+              <a href="inscription.html">Créer mon compte ESST</a>
+            </div>
+          </details>
+        </nav>
+      </div>
+    </header>
+
+    <main id="contenu" class="container" tabindex="-1">
+      <section class="home-hero">
+        <div class="home-hero__content">
+          <p class="eyebrow">École Supérieure des Sciences et Technologies</p>
+          <h1 class="home-hero__title">
+            Votre école.<br />Vos ressources.<br />Votre avenir.
+          </h1>
+          <p class="home-hero__description">
+            Étudiants et enseignants de l’ESST : trouvez les ouvrages pour vos
+            cours, réservez vos ressources et suivez vos emprunts.
+          </p>
+          <div class="role-choice" id="choisir-espace">
+            <p class="role-choice__label">Choisissez votre espace</p>
+            <div class="actions">
+              <a class="button button--primary role-choice__button" href="catalogue.html">Étudiant →</a
+              >
+              <a class="button role-choice__button" href="tableau-de-bord.html">Admin →</a
+              >
+            </div>
+            <p class="text-muted text-small section-gap">
+              Accès direct à la simulation, sans connexion.
+            </p>
+          </div>
+        </div>
+        <div class="home-hero__books" aria-label="Sélection de la bibliothèque">
+          <article class="book-card book-card--info">
+            <a class="book-cover" href="detail-livre.html" aria-label="Voir Clean Code">
+              <span class="book-cover__label">Bibliothèque ESST<br />Ressources &amp; savoirs</span
+              >
+              <span class="book-cover__title">Clean<br />Code</span>
+            </a>
+            <p class="book-card__category">Informatique</p>
+            <h2 class="book-card__title">
+              <a href="detail-livre.html">Clean Code</a>
+            </h2>
+            <p class="book-card__author">Robert C. Martin</p>
+            <p class="book-card__meta">★ 4,8 · Disponible</p>
+            <a
+              class="button button--block button--small"
+              href="detail-livre.html"
+              aria-label="Voir Clean Code"
+              >Voir le livre</a
+            >
+          </article>
+
+          <article class="book-card book-card--info">
+            <a
+              class="book-cover book-cover--algorithms"
+              href="detail-algorithmes.html"
+              aria-label="Voir Introduction aux algorithmes"
+            >
+              <span class="book-cover__label">Bibliothèque ESST<br />Ressources &amp; savoirs</span
+              >
+              <span class="book-cover__title">Introduction<br />aux<br />algorithmes</span
+              >
+            </a>
+            <p class="book-card__category">Informatique</p>
+            <h2 class="book-card__title">
+              <a href="detail-algorithmes.html">Introduction aux algorithmes</a>
+            </h2>
+            <p class="book-card__author">Thomas H. Cormen</p>
+            <p class="book-card__meta">★ 4,7 · Disponible</p>
+            <a
+              class="button button--block button--small"
+              href="detail-algorithmes.html"
+              aria-label="Voir Introduction aux algorithmes"
+              >Voir le livre</a
+            >
+          </article>
+        </div>
+      </section>
+      <section class="home-resources" aria-labelledby="ressources-titre">
+        <h2 id="ressources-titre">Les spécialités de l’ESST</h2>
+        <div class="resource-grid">
+          <article class="resource-card panel">
+            <h3>Informatique</h3>
+            <p>Code et développement</p>
+            <a class="button button--small" href="catalogue.html#discipline-info">Consulter →</a
+            >
+          </article>
+          <article class="resource-card panel">
+            <h3>Science et technologie</h3>
+            <p>Sciences appliquées et technologies</p>
+            <a class="button button--small" href="catalogue.html#discipline-science-technologie">Consulter →</a
+            >
+          </article>
+          <article class="resource-card panel">
+            <h3>Chimie</h3>
+            <p>Matière, réactions et analyses</p>
+            <a class="button button--small" href="catalogue.html#discipline-chimie">Consulter →</a
+            >
+          </article>
+          <article class="resource-card panel">
+            <h3>E-commerce</h3>
+            <p>Commerce en ligne et expérience client</p>
+            <a class="button button--small" href="catalogue.html#discipline-ecommerce">Consulter →</a
+            >
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner container">
+        <a class="site-footer__logo" href="index.html" aria-label="ESST — Accueil">
+          <img
+            src="assets/logo/ESST-logo.png"
+            width="450"
+            height="200"
+            alt="ESST — École Supérieure des Sciences et Technologies"
+          />
+        </a>
+        <p class="site-footer__description">
+          Bibliothèque de l’école · Étudiants · Enseignants · Personnel<br />
+          Simulation HTML/CSS · Données de démonstration
+        </p>
+        <nav class="site-footer__links" aria-label="Navigation de pied de page">
+          <a href="catalogue.html">Catalogue</a>
+          <a href="aide.html">Aide</a>
+          <a href="aide.html#contact">Contact</a>
+          <a href="composants.html">Composants &amp; fenêtres</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

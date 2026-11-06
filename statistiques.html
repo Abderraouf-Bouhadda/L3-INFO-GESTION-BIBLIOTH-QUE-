@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Statistiques — Bibliothèque de l’ESST. Simulation statique des espaces étudiant et administration."
+    />
+    <meta name="theme-color" content="#3c6dac" />
+    <title>Statistiques — Bibliothèque ESST</title>
+    <link rel="icon" type="image/png" href="assets/logo/ESST-logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&amp;family=Playfair+Display:wght@400;500&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#contenu">Aller au contenu</a>
+    <header class="site-header">
+      <div class="site-header__inner container">
+        <a class="site-header__logo" href="index.html" aria-label="ESST — Accueil">
+          <img
+            src="assets/logo/ESST-logo.png"
+            width="450"
+            height="200"
+            alt="ESST — École Supérieure des Sciences et Technologies"
+          />
+        </a>
+        <input
+          class="site-header__toggle"
+          type="checkbox"
+          id="menu-mobile"
+          aria-label="Afficher ou masquer le menu"
+          aria-controls="navigation-principale"
+        />
+        <label class="site-header__burger" for="menu-mobile">
+          <span></span><span></span><span></span>
+          <span class="visually-hidden">Menu principal</span>
+        </label>
+        <nav class="site-header__nav" id="navigation-principale" aria-label="Navigation principale">
+          <a href="catalogue.html">Catalogue</a>
+          <a href="mes-emprunts.html">Mes ressources</a>
+          <a href="aide.html">Aide</a>
+          <a class="site-header__switch" href="index.html#choisir-espace">Changer d’espace</a
+          >
+          <details class="dropdown site-header__account">
+            <summary>Mon espace ESST</summary>
+            <div class="dropdown__menu">
+              <a href="catalogue.html">Étudiant</a>
+              <a href="tableau-de-bord.html">Admin</a>
+              <a href="profil-etudiant.html">Mon profil</a>
+              <a href="connexion.html">Se connecter</a>
+              <a href="inscription.html">Créer mon compte ESST</a>
+            </div>
+          </details>
+        </nav>
+      </div>
+    </header>
+
+    <div class="workspace container">
+      <aside class="sidebar">
+        <p class="sidebar__label">Gestion de la bibliothèque</p>
+        <nav class="sidebar__nav" aria-label="Menu administrateur">
+          <a class="sidebar__link" href="tableau-de-bord.html">Tableau de bord</a
+          >
+          <a class="sidebar__link" href="gestion-livres.html">Livres</a>
+          <a class="sidebar__link" href="etudiants-enseignants.html">Étudiants et enseignants</a
+          >
+          <a class="sidebar__link" href="roles-permissions.html">Rôles et permissions</a
+          >
+          <a class="sidebar__link active" href="statistiques.html" aria-current="page">Statistiques</a
+          >
+          <a class="sidebar__link" href="securite.html">Sécurité</a>
+        </nav>
+        <section class="sidebar__note" aria-label="Bibliothèque ESST">
+          <h2>Bibliothèque ESST</h2>
+          <p>
+            Un espace dédié au suivi des ressources et des prêts de l’école.
+          </p>
+        </section>
+      </aside>
+
+      <main class="page-content" id="contenu" tabindex="-1">
+        <div class="page-heading">
+          <div>
+            <h1>Statistiques de la bibliothèque</h1>
+            <p class="page-heading__description">
+              Les usages documentaires des étudiants et enseignants ESST.
+            </p>
+          </div>
+          <details class="dropdown">
+            <summary>Ce mois-ci</summary>
+            <div class="dropdown__menu">
+              <a href="#contenu">Octobre 2026 · Démonstration</a
+              ><a href="#periode">À propos des périodes</a>
+            </div>
+          </details>
+        </div>
+        <div class="notice inline-result" id="periode">
+          <span class="notice__title">Période de démonstration</span>
+          <p>Les graphiques présentent les valeurs statiques d’octobre 2026.</p>
+        </div>
+        <section class="stats-grid stats-grid--four" aria-label="Indicateurs">
+          <article class="stat-card">
+            <span class="stat-card__label">Emprunts</span>
+            <strong class="stat-card__value">284</strong>
+            <span class="stat-card__description">+12 % vs mois précédent</span>
+          </article>
+
+          <article class="stat-card">
+            <span class="stat-card__label">Nouveaux comptes</span>
+            <strong class="stat-card__value">18</strong>
+            <span class="stat-card__description">communauté ESST</span>
+          </article>
+
+          <article class="stat-card">
+            <span class="stat-card__label">Retours à temps</span>
+            <strong class="stat-card__value">94 %</strong>
+            <span class="stat-card__description">+3 points</span>
+          </article>
+
+          <article class="stat-card">
+            <span class="stat-card__label">Réservations</span>
+            <strong class="stat-card__value">67</strong>
+            <span class="stat-card__description">+9 % vs mois précédent</span>
+          </article>
+        </section>
+        <div class="split-grid">
+          <section class="panel">
+            <h2>Évolution des emprunts</h2>
+            <p class="text-muted text-small">
+              Données de démonstration · 6 derniers mois
+            </p>
+            <div
+              class="chart"
+              role="img"
+              aria-label="Emprunts : mai 148, juin 184, juillet 165, août 222, septembre 254, octobre 284."
+            >
+              <div class="chart__column">
+                <span>148</span>
+                <div class="chart__bar chart__bar--148" aria-hidden="true"></div>
+                <span class="chart__label">Mai</span>
+              </div>
+              <div class="chart__column">
+                <span>184</span>
+                <div class="chart__bar chart__bar--184" aria-hidden="true"></div>
+                <span class="chart__label">Juin</span>
+              </div>
+              <div class="chart__column">
+                <span>165</span>
+                <div class="chart__bar chart__bar--165" aria-hidden="true"></div>
+                <span class="chart__label">Juil.</span>
+              </div>
+              <div class="chart__column">
+                <span>222</span>
+                <div class="chart__bar chart__bar--222" aria-hidden="true"></div>
+                <span class="chart__label">Août</span>
+              </div>
+              <div class="chart__column">
+                <span>254</span>
+                <div class="chart__bar chart__bar--254" aria-hidden="true"></div>
+                <span class="chart__label">Sept.</span>
+              </div>
+              <div class="chart__column">
+                <span>284</span>
+                <div class="chart__bar chart__bar--284" aria-hidden="true"></div>
+                <span class="chart__label">Oct.</span>
+              </div>
+            </div>
+          </section>
+          <section class="panel">
+            <h2>Spécialités les plus consultées</h2>
+            <p class="text-muted text-small">Répartition de démonstration</p>
+            <dl class="discipline-list">
+              <dt>Informatique</dt>
+              <dd>42 %</dd>
+              <dt>Science et technologie</dt>
+              <dd>28 %</dd>
+              <dt>Chimie</dt>
+              <dd>18 %</dd>
+              <dt>E-commerce</dt>
+              <dd>12 %</dd>
+            </dl>
+          </section>
+        </div>
+        <div class="section-gap">
+          <div class="table-wrap">
+            <table class="data-table">
+              <caption class="visually-hidden">
+                Ouvrages les plus empruntés
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">Ouvrages les plus empruntés</th>
+                  <th scope="col">Prêts</th>
+                  <th scope="col">Note moyenne</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a href="detail-livre.html">Clean Code</a></td>
+                  <td>38</td>
+                  <td>4,8 / 5</td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="detail-algorithmes.html">Introduction aux algorithmes</a
+                    >
+                  </td>
+                  <td>31</td>
+                  <td>4,7 / 5</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner container">
+        <a class="site-footer__logo" href="index.html" aria-label="ESST — Accueil">
+          <img
+            src="assets/logo/ESST-logo.png"
+            width="450"
+            height="200"
+            alt="ESST — École Supérieure des Sciences et Technologies"
+          />
+        </a>
+        <p class="site-footer__description">
+          Bibliothèque de l’école · Étudiants · Enseignants · Personnel<br />
+          Simulation HTML/CSS · Données de démonstration
+        </p>
+        <nav class="site-footer__links" aria-label="Navigation de pied de page">
+          <a href="catalogue.html">Catalogue</a>
+          <a href="aide.html">Aide</a>
+          <a href="aide.html#contact">Contact</a>
+          <a href="composants.html">Composants &amp; fenêtres</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

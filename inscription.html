@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Créer mon compte ESST — Bibliothèque de l’ESST. Simulation statique des espaces étudiant et administration."
+    />
+    <meta name="theme-color" content="#3c6dac" />
+    <title>Créer mon compte ESST — Bibliothèque ESST</title>
+    <link rel="icon" type="image/png" href="assets/logo/ESST-logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&amp;family=Playfair+Display:wght@400;500&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#contenu">Aller au contenu</a>
+    <header class="site-header">
+      <div class="site-header__inner container">
+        <a class="site-header__logo" href="index.html" aria-label="ESST — Accueil">
+          <img
+            src="assets/logo/ESST-logo.png"
+            width="450"
+            height="200"
+            alt="ESST — École Supérieure des Sciences et Technologies"
+          />
+        </a>
+        <input
+          class="site-header__toggle"
+          type="checkbox"
+          id="menu-mobile"
+          aria-label="Afficher ou masquer le menu"
+          aria-controls="navigation-principale"
+        />
+        <label class="site-header__burger" for="menu-mobile">
+          <span></span><span></span><span></span>
+          <span class="visually-hidden">Menu principal</span>
+        </label>
+        <nav class="site-header__nav" id="navigation-principale" aria-label="Navigation principale">
+          <a href="catalogue.html">Catalogue</a>
+          <a href="mes-emprunts.html">Mes ressources</a>
+          <a href="aide.html">Aide</a>
+          <a class="site-header__switch" href="index.html#choisir-espace">Changer d’espace</a
+          >
+          <details class="dropdown site-header__account">
+            <summary>Mon espace ESST</summary>
+            <div class="dropdown__menu">
+              <a href="catalogue.html">Étudiant</a>
+              <a href="tableau-de-bord.html">Admin</a>
+              <a href="profil-etudiant.html">Mon profil</a>
+              <a href="connexion.html">Se connecter</a>
+              <a href="inscription.html">Créer mon compte ESST</a>
+            </div>
+          </details>
+        </nav>
+      </div>
+    </header>
+
+    <main id="contenu" class="container" tabindex="-1">
+      <div class="auth-layout">
+        <aside class="auth-intro">
+          <a class="auth-intro__logo" href="index.html"><img src="assets/logo/ESST-logo.png" width="450" height="200" alt="ESST — Accueil"/></a>
+          <p class="eyebrow">Bibliothèque de l’ESST</p>
+          <h2 class="auth-intro__title">Votre parcours<br />commence ici.</h2>
+          <p class="auth-intro__description">
+            Les ressources de l’École Supérieure des Sciences et Technologies, à
+            portée de main.
+          </p>
+          <div class="panel">
+            <h3>Un accès pour la communauté ESST</h3>
+            <p class="text-muted">
+              Étudiants, enseignants et personnel : un espace commun pour
+              apprendre, enseigner et faire avancer vos projets.
+            </p>
+          </div>
+        </aside>
+        <section class="auth-main">
+          <a class="auth-main__back" href="index.html">← Retour à l’accueil ESST</a
+          >
+          <h1>Créer mon compte ESST</h1>
+          <p class="auth-main__description">
+            Accédez aux ressources documentaires de votre école.
+          </p>
+          <div class="notice notice--success inline-result" id="lien-envoye">
+            <span class="notice__title">Démonstration confirmée</span>
+            <p>
+              La demande de récupération d’accès a été simulée ; aucun e-mail
+              n’a été envoyé. Aucune donnée n’est enregistrée.
+            </p>
+          </div>
+          <form class="form" action="catalogue.html" method="get">
+            <div class="field">
+              <label for="inscription-nom">Nom et prénom</label>
+              <input
+                id="inscription-nom"
+                type="text"
+                placeholder="Votre nom complet"
+                required
+                autocomplete="name"
+              />
+
+              <span class="field__error">Veuillez renseigner une valeur valide.</span
+              >
+            </div>
+
+            <div class="form__row">
+              <div class="field">
+                <label for="inscription-profil">Profil</label>
+                <select id="inscription-profil">
+                  <option>Étudiant</option>
+                  <option>Enseignant</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="inscription-matricule">Matricule ESST</label>
+                <input id="inscription-matricule" type="text" placeholder="Votre matricule" required/>
+
+                <span class="field__error">Veuillez renseigner une valeur valide.</span
+                >
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="inscription-email">Adresse e-mail ESST</label>
+              <input
+                id="inscription-email"
+                type="email"
+                placeholder="prenom.nom@esst-sup.com"
+                required
+                autocomplete="email"
+              />
+
+              <span class="field__error">Veuillez renseigner une valeur valide.</span
+              >
+            </div>
+
+            <div class="field">
+              <label for="inscription-motdepasse">Mot de passe</label>
+              <input
+                id="inscription-motdepasse"
+                type="password"
+                placeholder="••••••••"
+                required
+                minlength="8"
+                autocomplete="new-password"
+                aria-describedby="inscription-motdepasse-hint"
+              />
+              <span class="field__hint" id="inscription-motdepasse-hint">8 caractères minimum. Utilisez une valeur fictive pour la
+                simulation.</span
+              >
+              <span class="field__error">Veuillez renseigner une valeur valide.</span
+              >
+            </div>
+
+            <div class="field">
+              <label for="inscription-confirmation">Confirmer le mot de passe</label
+              >
+              <input
+                id="inscription-confirmation"
+                type="password"
+                placeholder="••••••••"
+                required
+                minlength="8"
+                autocomplete="new-password"
+              />
+
+              <span class="field__error">Veuillez renseigner une valeur valide.</span
+              >
+            </div>
+
+            <label class="checkbox" for="conditions"><input id="conditions" type="checkbox" required />J’accepte les
+              <a href="aide.html#conditions">conditions d’utilisation</a
+              >.</label
+            >
+            <button class="button button--primary button--block" type="submit">
+              Créer mon compte
+            </button>
+          </form>
+          <p class="auth-main__signup">
+            <a href="connexion.html">Déjà inscrit ? Se connecter</a>
+          </p>
+          <p class="text-muted text-small">
+            Portail documentaire · École Supérieure des Sciences et Technologies
+          </p>
+          <p class="text-muted text-small section-gap">
+            Simulation : utilisez des informations fictives. Aucun compte n’est
+            créé.
+          </p>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner container">
+        <a class="site-footer__logo" href="index.html" aria-label="ESST — Accueil">
+          <img
+            src="assets/logo/ESST-logo.png"
+            width="450"
+            height="200"
+            alt="ESST — École Supérieure des Sciences et Technologies"
+          />
+        </a>
+        <p class="site-footer__description">
+          Bibliothèque de l’école · Étudiants · Enseignants · Personnel<br />
+          Simulation HTML/CSS · Données de démonstration
+        </p>
+        <nav class="site-footer__links" aria-label="Navigation de pied de page">
+          <a href="catalogue.html">Catalogue</a>
+          <a href="aide.html">Aide</a>
+          <a href="aide.html#contact">Contact</a>
+          <a href="composants.html">Composants &amp; fenêtres</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

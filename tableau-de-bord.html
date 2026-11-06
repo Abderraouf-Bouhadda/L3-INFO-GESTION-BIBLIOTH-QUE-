@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Tableau de bord — Bibliothèque de l’ESST. Simulation statique des espaces étudiant et administration."
+    />
+    <meta name="theme-color" content="#3c6dac" />
+    <title>Tableau de bord — Bibliothèque ESST</title>
+    <link rel="icon" type="image/png" href="assets/logo/ESST-logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&amp;family=Playfair+Display:wght@400;500&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#contenu">Aller au contenu</a>
+    <header class="site-header">
+      <div class="site-header__inner container">
+        <a class="site-header__logo" href="index.html" aria-label="ESST — Accueil">
+          <img
+            src="assets/logo/ESST-logo.png"
+            width="450"
+            height="200"
+            alt="ESST — École Supérieure des Sciences et Technologies"
+          />
+        </a>
+        <input
+          class="site-header__toggle"
+          type="checkbox"
+          id="menu-mobile"
+          aria-label="Afficher ou masquer le menu"
+          aria-controls="navigation-principale"
+        />
+        <label class="site-header__burger" for="menu-mobile">
+          <span></span><span></span><span></span>
+          <span class="visually-hidden">Menu principal</span>
+        </label>
+        <nav class="site-header__nav" id="navigation-principale" aria-label="Navigation principale">
+          <a href="catalogue.html">Catalogue</a>
+          <a href="mes-emprunts.html">Mes ressources</a>
+          <a href="aide.html">Aide</a>
+          <a class="site-header__switch" href="index.html#choisir-espace">Changer d’espace</a
+          >
+          <details class="dropdown site-header__account">
+            <summary>Mon espace ESST</summary>
+            <div class="dropdown__menu">
+              <a href="catalogue.html">Étudiant</a>
+              <a href="tableau-de-bord.html">Admin</a>
+              <a href="profil-etudiant.html">Mon profil</a>
+              <a href="connexion.html">Se connecter</a>
+              <a href="inscription.html">Créer mon compte ESST</a>
+            </div>
+          </details>
+        </nav>
+      </div>
+    </header>
+
+    <div class="workspace container">
+      <aside class="sidebar">
+        <p class="sidebar__label">Gestion de la bibliothèque</p>
+        <nav class="sidebar__nav" aria-label="Menu administrateur">
+          <a class="sidebar__link active" href="tableau-de-bord.html" aria-current="page">Tableau de bord</a
+          >
+          <a class="sidebar__link" href="gestion-livres.html">Livres</a>
+          <a class="sidebar__link" href="etudiants-enseignants.html">Étudiants et enseignants</a
+          >
+          <a class="sidebar__link" href="roles-permissions.html">Rôles et permissions</a
+          >
+          <a class="sidebar__link" href="statistiques.html">Statistiques</a>
+          <a class="sidebar__link" href="securite.html">Sécurité</a>
+        </nav>
+        <section class="sidebar__note" aria-label="Bibliothèque ESST">
+          <h2>Bibliothèque ESST</h2>
+          <p>
+            Un espace dédié au suivi des ressources et des prêts de l’école.
+          </p>
+        </section>
+      </aside>
+
+      <main class="page-content" id="contenu" tabindex="-1">
+        <div class="page-heading">
+          <div>
+            <h1>Tableau de bord ESST</h1>
+            <p class="page-heading__description">
+              Le suivi des ressources documentaires et des prêts de l’école.
+            </p>
+          </div>
+          <a class="button button--primary" href="ajouter-livre.html">Ajouter un livre</a
+          >
+        </div>
+        <section class="stats-grid stats-grid--four" aria-label="Indicateurs">
+          <article class="stat-card">
+            <span class="stat-card__label">Ouvrages</span>
+            <strong class="stat-card__value">1 248</strong>
+            <span class="stat-card__description">+24 ce mois-ci</span>
+          </article>
+
+          <article class="stat-card">
+            <span class="stat-card__label">Comptes ESST</span>
+            <strong class="stat-card__value">386</strong>
+            <span class="stat-card__description">étudiants et enseignants</span>
+          </article>
+
+          <article class="stat-card">
+            <span class="stat-card__label">Prêts en cours</span>
+            <strong class="stat-card__value">92</strong>
+            <span class="stat-card__description">7 retours aujourd’hui</span>
+          </article>
+
+          <article class="stat-card">
+            <span class="stat-card__label">En retard</span>
+            <strong class="stat-card__value">08</strong>
+            <span class="stat-card__description">relances à traiter</span>
+          </article>
+        </section>
+        <div class="split-grid">
+          <section class="panel">
+            <h2>Les emprunts cette semaine</h2>
+            <p class="text-muted text-small">
+              Données de démonstration · communauté ESST
+            </p>
+            <div
+              class="chart"
+              role="img"
+              aria-label="Emprunts : lundi 18, mardi 26, mercredi 21, jeudi 34, vendredi 28, samedi 52, dimanche 31."
+            >
+              <div class="chart__column">
+                <span>18</span>
+                <div class="chart__bar chart__bar--18" aria-hidden="true"></div>
+                <span class="chart__label">Lun.</span>
+              </div>
+              <div class="chart__column">
+                <span>26</span>
+                <div class="chart__bar chart__bar--26" aria-hidden="true"></div>
+                <span class="chart__label">Mar.</span>
+              </div>
+              <div class="chart__column">
+                <span>21</span>
+                <div class="chart__bar chart__bar--21" aria-hidden="true"></div>
+                <span class="chart__label">Mer.</span>
+              </div>
+              <div class="chart__column">
+                <span>34</span>
+                <div class="chart__bar chart__bar--34" aria-hidden="true"></div>
+                <span class="chart__label">Jeu.</span>
+              </div>
+              <div class="chart__column">
+                <span>28</span>
+                <div class="chart__bar chart__bar--28" aria-hidden="true"></div>
+                <span class="chart__label">Ven.</span>
+              </div>
+              <div class="chart__column">
+                <span>52</span>
+                <div class="chart__bar chart__bar--52" aria-hidden="true"></div>
+                <span class="chart__label">Sam.</span>
+              </div>
+              <div class="chart__column">
+                <span>31</span>
+                <div class="chart__bar chart__bar--31" aria-hidden="true"></div>
+                <span class="chart__label">Dim.</span>
+              </div>
+            </div>
+          </section>
+          <section class="panel dashboard-tasks">
+            <h2>À traiter aujourd’hui</h2>
+            <p>
+              08 prêts en retard<br />05 réservations à préparer<br />03
+              nouveaux comptes ESST
+            </p>
+            <a class="button button--primary" href="gestion-livres.html#gerer-retours">Gérer les retours</a
+            ><br />
+            <a class="button" href="gestion-livres.html#reservations-admin">Voir les réservations</a
+            >
+          </section>
+        </div>
+        <div class="section-gap">
+          <div class="table-wrap">
+            <table class="data-table">
+              <caption class="visually-hidden">
+                Activité récente de la bibliothèque
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">Activité récente</th>
+                  <th scope="col">Membre ESST</th>
+                  <th scope="col">Date</th>
+                  <th scope="col">État</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a href="detail-livre.html">Clean Code · Emprunt</a></td>
+                  <td>Amine M. · Étudiant</td>
+                  <td>23 oct. · 10:42</td>
+                  <td>Confirmé</td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="detail-reseaux.html">Réseaux informatiques · Retour</a
+                    >
+                  </td>
+                  <td>Sarah B. · Enseignante</td>
+                  <td>23 oct. · 10:15</td>
+                  <td>Retourné</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner container">
+        <a class="site-footer__logo" href="index.html" aria-label="ESST — Accueil">
+          <img
+            src="assets/logo/ESST-logo.png"
+            width="450"
+            height="200"
+            alt="ESST — École Supérieure des Sciences et Technologies"
+          />
+        </a>
+        <p class="site-footer__description">
+          Bibliothèque de l’école · Étudiants · Enseignants · Personnel<br />
+          Simulation HTML/CSS · Données de démonstration
+        </p>
+        <nav class="site-footer__links" aria-label="Navigation de pied de page">
+          <a href="catalogue.html">Catalogue</a>
+          <a href="aide.html">Aide</a>
+          <a href="aide.html#contact">Contact</a>
+          <a href="composants.html">Composants &amp; fenêtres</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

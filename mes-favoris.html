@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Mes favoris — Bibliothèque de l’ESST. Simulation statique des espaces étudiant et administration."
+    />
+    <meta name="theme-color" content="#3c6dac" />
+    <title>Mes favoris — Bibliothèque ESST</title>
+    <link rel="icon" type="image/png" href="assets/logo/ESST-logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&amp;family=Playfair+Display:wght@400;500&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#contenu">Aller au contenu</a>
+    <header class="site-header">
+      <div class="site-header__inner container">
+        <a class="site-header__logo" href="index.html" aria-label="ESST — Accueil">
+          <img
+            src="assets/logo/ESST-logo.png"
+            width="450"
+            height="200"
+            alt="ESST — École Supérieure des Sciences et Technologies"
+          />
+        </a>
+        <input
+          class="site-header__toggle"
+          type="checkbox"
+          id="menu-mobile"
+          aria-label="Afficher ou masquer le menu"
+          aria-controls="navigation-principale"
+        />
+        <label class="site-header__burger" for="menu-mobile">
+          <span></span><span></span><span></span>
+          <span class="visually-hidden">Menu principal</span>
+        </label>
+        <nav class="site-header__nav" id="navigation-principale" aria-label="Navigation principale">
+          <a href="catalogue.html">Catalogue</a>
+          <a href="mes-emprunts.html">Mes ressources</a>
+          <a href="aide.html">Aide</a>
+          <a class="site-header__switch" href="index.html#choisir-espace">Changer d’espace</a
+          >
+          <details class="dropdown site-header__account">
+            <summary>Mon espace ESST</summary>
+            <div class="dropdown__menu">
+              <a href="catalogue.html">Étudiant</a>
+              <a href="tableau-de-bord.html">Admin</a>
+              <a href="profil-etudiant.html">Mon profil</a>
+              <a href="connexion.html">Se connecter</a>
+              <a href="inscription.html">Créer mon compte ESST</a>
+            </div>
+          </details>
+        </nav>
+      </div>
+    </header>
+
+    <div class="workspace container">
+      <aside class="sidebar">
+        <p class="sidebar__label">Mon espace ESST</p>
+        <nav class="sidebar__nav" aria-label="Menu étudiant">
+          <a class="sidebar__link" href="accueil.html">Accueil ESST</a>
+          <a class="sidebar__link" href="catalogue.html">Catalogue</a>
+          <a class="sidebar__link" href="mes-emprunts.html">Mes emprunts</a>
+          <a class="sidebar__link" href="historique.html">Historique</a>
+          <a class="sidebar__link" href="mes-reservations.html">Mes réservations</a
+          >
+          <a class="sidebar__link active" href="mes-favoris.html" aria-current="page">Mes favoris</a
+          >
+          <a class="sidebar__link" href="mes-avis.html">Mes avis</a>
+          <a class="sidebar__link" href="profil-etudiant.html">Mon profil</a>
+        </nav>
+        <section class="sidebar__note" aria-label="Bibliothèque ESST">
+          <h2>Bibliothèque ESST</h2>
+          <p>Vos ressources pour les cours, les projets et la recherche.</p>
+        </section>
+      </aside>
+
+      <main class="page-content" id="contenu" tabindex="-1">
+        <div class="page-heading">
+          <div>
+            <h1>Mes favoris</h1>
+            <p class="page-heading__description">
+              Gardez les ressources utiles à vos prochains cours et projets.
+            </p>
+          </div>
+        </div>
+        <div class="notice notice--success inline-result" id="confirmation">
+          <span class="notice__title">Démonstration confirmée</span>
+          <p>
+            Le favori a été sélectionné dans cette simulation. Aucune donnée
+            n’est enregistrée.
+          </p>
+        </div>
+        <p class="text-small">
+          <span class="badge">4 ouvrages dans la sélection initiale</span>
+        </p>
+        <div class="book-grid">
+          <div class="favorite-item">
+            <input class="visually-hidden" type="checkbox" id="retirer-clean" />
+
+            <article class="book-card book-card--info">
+              <a class="book-cover" href="detail-livre.html" aria-label="Voir Clean Code">
+                <span class="book-cover__label">Bibliothèque ESST<br />Ressources &amp; savoirs</span
+                >
+                <span class="book-cover__title">Clean<br />Code</span>
+              </a>
+              <p class="book-card__category">Informatique</p>
+              <h2 class="book-card__title">
+                <a href="detail-livre.html">Clean Code</a>
+              </h2>
+              <p class="book-card__author">Robert C. Martin</p>
+              <p class="book-card__meta">★ 4,8 · Disponible</p>
+              <a
+                class="button button--block button--small"
+                href="detail-livre.html"
+                aria-label="Voir Clean Code"
+                >Voir le livre</a
+              >
+            </article>
+
+            <label class="button button--small favorite-item__remove" for="retirer-clean">Retirer des favoris<span class="visually-hidden">
+                : Clean Code</span
+              ></label
+            >
+            <div class="favorite-item__empty panel">
+              <p>Clean Code a été retiré de cet aperçu.</p>
+              <label class="button button--small" for="retirer-clean">Rétablir le favori</label
+              >
+            </div>
+          </div>
+
+          <div class="favorite-item">
+            <input class="visually-hidden" type="checkbox" id="retirer-algorithms"/>
+
+            <article class="book-card book-card--info">
+              <a
+                class="book-cover book-cover--algorithms"
+                href="detail-algorithmes.html"
+                aria-label="Voir Introduction aux algorithmes"
+              >
+                <span class="book-cover__label">Bibliothèque ESST<br />Ressources &amp; savoirs</span
+                >
+                <span class="book-cover__title">Introduction<br />aux<br />algorithmes</span
+                >
+              </a>
+              <p class="book-card__category">Informatique</p>
+              <h2 class="book-card__title">
+                <a href="detail-algorithmes.html">Introduction aux algorithmes</a
+                >
+              </h2>
+              <p class="book-card__author">Thomas H. Cormen</p>
+              <p class="book-card__meta">★ 4,7 · Disponible</p>
+              <a
+                class="button button--block button--small"
+                href="detail-algorithmes.html"
+                aria-label="Voir Introduction aux algorithmes"
+                >Voir le livre</a
+              >
+            </article>
+
+            <label class="button button--small favorite-item__remove" for="retirer-algorithms">Retirer des favoris<span class="visually-hidden">
+                : Introduction aux algorithmes</span
+              ></label
+            >
+            <div class="favorite-item__empty panel">
+              <p>Introduction aux algorithmes a été retiré de cet aperçu.</p>
+              <label class="button button--small" for="retirer-algorithms">Rétablir le favori</label
+              >
+            </div>
+          </div>
+
+          <div class="favorite-item">
+            <input class="visually-hidden" type="checkbox" id="retirer-network"/>
+
+            <article class="book-card book-card--science-technologie">
+              <a
+                class="book-cover book-cover--network"
+                href="detail-reseaux.html"
+                aria-label="Voir Réseaux informatiques"
+              >
+                <span class="book-cover__label">Bibliothèque ESST<br />Ressources &amp; savoirs</span
+                >
+                <span class="book-cover__title">Réseaux<br />informatiques</span
+                >
+              </a>
+              <p class="book-card__category">Science et technologie</p>
+              <h2 class="book-card__title">
+                <a href="detail-reseaux.html">Réseaux informatiques</a>
+              </h2>
+              <p class="book-card__author">Andrew S. Tanenbaum</p>
+              <p class="book-card__meta">★ 4,6 · Liste d’attente</p>
+              <a
+                class="button button--block button--small"
+                href="detail-reseaux.html"
+                aria-label="Voir Réseaux informatiques"
+                >Voir le livre</a
+              >
+            </article>
+
+            <label class="button button--small favorite-item__remove" for="retirer-network">Retirer des favoris<span class="visually-hidden">
+                : Réseaux informatiques</span
+              ></label
+            >
+            <div class="favorite-item__empty panel">
+              <p>Réseaux informatiques a été retiré de cet aperçu.</p>
+              <label class="button button--small" for="retirer-network">Rétablir le favori</label
+              >
+            </div>
+          </div>
+
+          <div class="favorite-item">
+            <input class="visually-hidden" type="checkbox" id="retirer-design"/>
+
+            <article class="book-card book-card--ecommerce">
+              <a
+                class="book-cover book-cover--design"
+                href="detail-design.html"
+                aria-label="Voir Design of Everyday Things"
+              >
+                <span class="book-cover__label">Bibliothèque ESST<br />Ressources &amp; savoirs</span
+                >
+                <span class="book-cover__title">The Design<br />of Everyday<br />Things</span
+                >
+              </a>
+              <p class="book-card__category">E-commerce</p>
+              <h2 class="book-card__title">
+                <a href="detail-design.html">Design of Everyday Things</a>
+              </h2>
+              <p class="book-card__author">Don Norman</p>
+              <p class="book-card__meta">★ 4,7 · Disponible</p>
+              <a
+                class="button button--block button--small"
+                href="detail-design.html"
+                aria-label="Voir Design of Everyday Things"
+                >Voir le livre</a
+              >
+            </article>
+
+            <label class="button button--small favorite-item__remove" for="retirer-design">Retirer des favoris<span class="visually-hidden">
+                : Design of Everyday Things</span
+              ></label
+            >
+            <div class="favorite-item__empty panel">
+              <p>Design of Everyday Things a été retiré de cet aperçu.</p>
+              <label class="button button--small" for="retirer-design">Rétablir le favori</label
+              >
+            </div>
+          </div>
+        </div>
+        <div class="section-gap">
+          <div class="notice">
+            <span class="notice__title">Préparez votre prochaine séance</span>
+            <p>
+              Enregistrez les livres de votre choix depuis le catalogue ESST.
+            </p>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner container">
+        <a class="site-footer__logo" href="index.html" aria-label="ESST — Accueil">
+          <img
+            src="assets/logo/ESST-logo.png"
+            width="450"
+            height="200"
+            alt="ESST — École Supérieure des Sciences et Technologies"
+          />
+        </a>
+        <p class="site-footer__description">
+          Bibliothèque de l’école · Étudiants · Enseignants · Personnel<br />
+          Simulation HTML/CSS · Données de démonstration
+        </p>
+        <nav class="site-footer__links" aria-label="Navigation de pied de page">
+          <a href="catalogue.html">Catalogue</a>
+          <a href="aide.html">Aide</a>
+          <a href="aide.html#contact">Contact</a>
+          <a href="composants.html">Composants &amp; fenêtres</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

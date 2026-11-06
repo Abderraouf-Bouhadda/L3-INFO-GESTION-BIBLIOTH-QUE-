@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Mes avis — Bibliothèque de l’ESST. Simulation statique des espaces étudiant et administration."
+    />
+    <meta name="theme-color" content="#3c6dac" />
+    <title>Mes avis — Bibliothèque ESST</title>
+    <link rel="icon" type="image/png" href="assets/logo/ESST-logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&amp;family=Playfair+Display:wght@400;500&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#contenu">Aller au contenu</a>
+    <header class="site-header">
+      <div class="site-header__inner container">
+        <a class="site-header__logo" href="index.html" aria-label="ESST — Accueil">
+          <img
+            src="assets/logo/ESST-logo.png"
+            width="450"
+            height="200"
+            alt="ESST — École Supérieure des Sciences et Technologies"
+          />
+        </a>
+        <input
+          class="site-header__toggle"
+          type="checkbox"
+          id="menu-mobile"
+          aria-label="Afficher ou masquer le menu"
+          aria-controls="navigation-principale"
+        />
+        <label class="site-header__burger" for="menu-mobile">
+          <span></span><span></span><span></span>
+          <span class="visually-hidden">Menu principal</span>
+        </label>
+        <nav class="site-header__nav" id="navigation-principale" aria-label="Navigation principale">
+          <a href="catalogue.html">Catalogue</a>
+          <a href="mes-emprunts.html">Mes ressources</a>
+          <a href="aide.html">Aide</a>
+          <a class="site-header__switch" href="index.html#choisir-espace">Changer d’espace</a
+          >
+          <details class="dropdown site-header__account">
+            <summary>Mon espace ESST</summary>
+            <div class="dropdown__menu">
+              <a href="catalogue.html">Étudiant</a>
+              <a href="tableau-de-bord.html">Admin</a>
+              <a href="profil-etudiant.html">Mon profil</a>
+              <a href="connexion.html">Se connecter</a>
+              <a href="inscription.html">Créer mon compte ESST</a>
+            </div>
+          </details>
+        </nav>
+      </div>
+    </header>
+
+    <div class="workspace container">
+      <aside class="sidebar">
+        <p class="sidebar__label">Mon espace ESST</p>
+        <nav class="sidebar__nav" aria-label="Menu étudiant">
+          <a class="sidebar__link" href="accueil.html">Accueil ESST</a>
+          <a class="sidebar__link" href="catalogue.html">Catalogue</a>
+          <a class="sidebar__link" href="mes-emprunts.html">Mes emprunts</a>
+          <a class="sidebar__link" href="historique.html">Historique</a>
+          <a class="sidebar__link" href="mes-reservations.html">Mes réservations</a
+          >
+          <a class="sidebar__link" href="mes-favoris.html">Mes favoris</a>
+          <a class="sidebar__link active" href="mes-avis.html" aria-current="page">Mes avis</a
+          >
+          <a class="sidebar__link" href="profil-etudiant.html">Mon profil</a>
+        </nav>
+        <section class="sidebar__note" aria-label="Bibliothèque ESST">
+          <h2>Bibliothèque ESST</h2>
+          <p>Vos ressources pour les cours, les projets et la recherche.</p>
+        </section>
+      </aside>
+
+      <main class="page-content" id="contenu" tabindex="-1">
+        <div class="page-heading">
+          <div>
+            <h1>Mes avis</h1>
+            <p class="page-heading__description">
+              Partagez votre expérience avec la communauté ESST.
+            </p>
+          </div>
+        </div>
+        <div class="notice notice--success inline-result" id="confirmation">
+          <span class="notice__title">Démonstration confirmée</span>
+          <p>
+            La publication de votre avis a été simulée. Aucune donnée n’est
+            enregistrée.
+          </p>
+        </div>
+        <div class="review-tabs">
+          <input class="visually-hidden" type="radio" name="onglet-avis" id="reviews-published" checked/>
+          <input class="visually-hidden" type="radio" name="onglet-avis" id="reviews-pending"/>
+          <div class="review-tabs__labels" role="group" aria-label="Afficher les avis">
+            <label class="button" for="reviews-published">Avis publiés · 2</label
+            >
+            <label class="button" for="reviews-pending">À évaluer · 3</label>
+          </div>
+          <div class="review-tabs__published">
+            <article class="review-card panel" id="avis-retire-clean">
+              <div class="review-card__heading">
+                <h2><a href="detail-livre.html">Clean Code</a></h2>
+                <span class="review-card__stars" aria-label="5 étoiles sur 5">★★★★★</span
+                >
+              </div>
+              <p class="review-card__text">
+                Un livre nécessaire pour améliorer la qualité de nos projets de
+                développement web.
+              </p>
+              <p class="review-card__date">
+                Publié le 20 octobre 2026 · Étudiant ESST
+              </p>
+              <div class="actions">
+                <a class="button button--small" href="#modifier-avis-clean">Modifier mon avis</a
+                ><a class="button button--danger button--small" href="#supprimer-avis-clean">Supprimer</a
+                >
+              </div>
+            </article>
+
+            <article class="review-card panel" id="avis-retire-design">
+              <div class="review-card__heading">
+                <h2>
+                  <a href="detail-design.html">Design of Everyday Things</a>
+                </h2>
+                <span class="review-card__stars" aria-label="4 étoiles sur 5">★★★★☆</span
+                >
+              </div>
+              <p class="review-card__text">
+                Un ouvrage clair pour comprendre la conception des interfaces
+                dans le module IHM.
+              </p>
+              <p class="review-card__date">
+                Publié le 20 octobre 2026 · Étudiant ESST
+              </p>
+              <div class="actions">
+                <a class="button button--small" href="#modifier-avis-design">Modifier mon avis</a
+                ><a class="button button--danger button--small" href="#supprimer-avis-design">Supprimer</a
+                >
+              </div>
+            </article>
+          </div>
+          <div class="review-tabs__pending stack">
+            <article class="panel">
+              <h2>Clean Code</h2>
+              <p class="text-muted">Partagez votre expérience de lecture.</p>
+              <a class="button" href="#nouvel-avis">Donner mon avis</a>
+            </article>
+            <article class="panel">
+              <h2>Introduction aux algorithmes</h2>
+              <p class="text-muted">Partagez votre expérience de lecture.</p>
+              <a class="button" href="#nouvel-avis">Donner mon avis</a>
+            </article>
+            <article class="panel">
+              <h2>Réseaux informatiques</h2>
+              <p class="text-muted">Partagez votre expérience de lecture.</p>
+              <a class="button" href="#nouvel-avis">Donner mon avis</a>
+            </article>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner container">
+        <a class="site-footer__logo" href="index.html" aria-label="ESST — Accueil">
+          <img
+            src="assets/logo/ESST-logo.png"
+            width="450"
+            height="200"
+            alt="ESST — École Supérieure des Sciences et Technologies"
+          />
+        </a>
+        <p class="site-footer__description">
+          Bibliothèque de l’école · Étudiants · Enseignants · Personnel<br />
+          Simulation HTML/CSS · Données de démonstration
+        </p>
+        <nav class="site-footer__links" aria-label="Navigation de pied de page">
+          <a href="catalogue.html">Catalogue</a>
+          <a href="aide.html">Aide</a>
+          <a href="aide.html#contact">Contact</a>
+          <a href="composants.html">Composants &amp; fenêtres</a>
+        </nav>
+      </div>
+    </footer>
+
+    <section class="modal" id="nouvel-avis" role="dialog" aria-labelledby="nouvel-avis-titre" tabindex="-1">
+      <div class="modal__dialog">
+        <a class="modal__close" href="#contenu" aria-label="Fermer la fenêtre">×</a
+        >
+        <h2 id="nouvel-avis-titre">Votre avis sur un ouvrage</h2>
+
+        <form class="form" action="mes-avis.html#confirmation" method="get">
+          <fieldset>
+            <legend>Votre note</legend>
+            <div class="rating">
+              <input class="visually-hidden" type="radio" name="note" value="5" id="nouvel-avis-note-5"/><label for="nouvel-avis-note-5"><span aria-hidden="true">★</span
+                ><span class="visually-hidden">5 étoiles</span></label
+              ><input
+                class="visually-hidden"
+                type="radio"
+                name="note"
+                value="4"
+                id="nouvel-avis-note-4"
+                checked
+              /><label for="nouvel-avis-note-4"><span aria-hidden="true">★</span
+                ><span class="visually-hidden">4 étoiles</span></label
+              ><input class="visually-hidden" type="radio" name="note" value="3" id="nouvel-avis-note-3"/><label for="nouvel-avis-note-3"><span aria-hidden="true">★</span
+                ><span class="visually-hidden">3 étoiles</span></label
+              ><input class="visually-hidden" type="radio" name="note" value="2" id="nouvel-avis-note-2"/><label for="nouvel-avis-note-2"><span aria-hidden="true">★</span
+                ><span class="visually-hidden">2 étoiles</span></label
+              ><input class="visually-hidden" type="radio" name="note" value="1" id="nouvel-avis-note-1"/><label for="nouvel-avis-note-1"><span aria-hidden="true">★</span
+                ><span class="visually-hidden">1 étoile</span></label
+              >
+            </div>
+          </fieldset>
+          <div class="field">
+            <label for="nouvel-avis-note-commentaire">Votre commentaire</label>
+            <textarea
+              id="nouvel-avis-note-commentaire"
+              placeholder="Votre expérience de lecture…"
+              required
+              maxlength="1000"
+            ></textarea>
+          </div>
+          <div class="actions">
+            <a class="button" href="#contenu">Annuler</a>
+            <button class="button button--primary" type="submit">
+              Publier mon avis
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section
+      class="modal"
+      id="modifier-avis-clean"
+      role="dialog"
+      aria-labelledby="modifier-avis-clean-titre"
+      tabindex="-1"
+    >
+      <div class="modal__dialog">
+        <a class="modal__close" href="#contenu" aria-label="Fermer la fenêtre">×</a
+        >
+        <h2 id="modifier-avis-clean-titre">Votre avis sur Clean Code</h2>
+
+        <form class="form" action="mes-avis.html#confirmation" method="get">
+          <fieldset>
+            <legend>Votre note</legend>
+            <div class="rating">
+              <input class="visually-hidden" type="radio" name="note" value="5" id="modifier-clean-5"/><label for="modifier-clean-5"><span aria-hidden="true">★</span
+                ><span class="visually-hidden">5 étoiles</span></label
+              ><input
+                class="visually-hidden"
+                type="radio"
+                name="note"
+                value="4"
+                id="modifier-clean-4"
+                checked
+              /><label for="modifier-clean-4"><span aria-hidden="true">★</span
+                ><span class="visually-hidden">4 étoiles</span></label
+              ><input class="visually-hidden" type="radio" name="note" value="3" id="modifier-clean-3"/><label for="modifier-clean-3"><span aria-hidden="true">★</span
+                ><span class="visually-hidden">3 étoiles</span></label
+              ><input class="visually-hidden" type="radio" name="note" value="2" id="modifier-clean-2"/><label for="modifier-clean-2"><span aria-hidden="true">★</span
+                ><span class="visually-hidden">2 étoiles</span></label
+              ><input class="visually-hidden" type="radio" name="note" value="1" id="modifier-clean-1"/><label for="modifier-clean-1"><span aria-hidden="true">★</span
+                ><span class="visually-hidden">1 étoile</span></label
+              >
+            </div>
+          </fieldset>
+          <div class="field">
+            <label for="modifier-clean-commentaire">Votre commentaire</label>
+            <textarea
+              id="modifier-clean-commentaire"
+              placeholder="Votre expérience de lecture…"
+              required
+              maxlength="1000"
+            ></textarea>
+          </div>
+          <div class="actions">
+            <a class="button" href="#contenu">Annuler</a>
+            <button class="button button--primary" type="submit">
+              Publier mon avis
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section
+      class="modal"
+      id="supprimer-avis-clean"
+      role="dialog"
+      aria-labelledby="supprimer-avis-clean-titre"
+      tabindex="-1"
+    >
+      <div class="modal__dialog">
+        <a class="modal__close" href="#contenu" aria-label="Fermer la fenêtre">×</a
+        >
+        <h2 id="supprimer-avis-clean-titre">Supprimer cet avis ?</h2>
+        <p class="text-muted">
+          Votre avis sur Clean Code sera masqué dans cet aperçu.
+        </p>
+        <p class="modal__hint"></p>
+        <div class="actions">
+          <a class="button" href="#contenu">Revenir</a>
+          <a class="button button--danger" href="#avis-retire-clean">Supprimer mon avis</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="modal"
+      id="modifier-avis-design"
+      role="dialog"
+      aria-labelledby="modifier-avis-design-titre"
+      tabindex="-1"
+    >
+      <div class="modal__dialog">
+        <a class="modal__close" href="#contenu" aria-label="Fermer la fenêtre">×</a
+        >
+        <h2 id="modifier-avis-design-titre">
+          Votre avis sur Design of Everyday Things
+        </h2>
+
+        <form class="form" action="mes-avis.html#confirmation" method="get">
+          <fieldset>
+            <legend>Votre note</legend>
+            <div class="rating">
+              <input class="visually-hidden" type="radio" name="note" value="5" id="modifier-design-5"/><label for="modifier-design-5"><span aria-hidden="true">★</span
+                ><span class="visually-hidden">5 étoiles</span></label
+              ><input
+                class="visually-hidden"
+                type="radio"
+                name="note"
+                value="4"
+                id="modifier-design-4"
+                checked
+              /><label for="modifier-design-4"><span aria-hidden="true">★</span
+                ><span class="visually-hidden">4 étoiles</span></label
+              ><input class="visually-hidden" type="radio" name="note" value="3" id="modifier-design-3"/><label for="modifier-design-3"><span aria-hidden="true">★</span
+                ><span class="visually-hidden">3 étoiles</span></label
+              ><input class="visually-hidden" type="radio" name="note" value="2" id="modifier-design-2"/><label for="modifier-design-2"><span aria-hidden="true">★</span
+                ><span class="visually-hidden">2 étoiles</span></label
+              ><input class="visually-hidden" type="radio" name="note" value="1" id="modifier-design-1"/><label for="modifier-design-1"><span aria-hidden="true">★</span
+                ><span class="visually-hidden">1 étoile</span></label
+              >
+            </div>
+          </fieldset>
+          <div class="field">
+            <label for="modifier-design-commentaire">Votre commentaire</label>
+            <textarea
+              id="modifier-design-commentaire"
+              placeholder="Votre expérience de lecture…"
+              required
+              maxlength="1000"
+            ></textarea>
+          </div>
+          <div class="actions">
+            <a class="button" href="#contenu">Annuler</a>
+            <button class="button button--primary" type="submit">
+              Publier mon avis
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section
+      class="modal"
+      id="supprimer-avis-design"
+      role="dialog"
+      aria-labelledby="supprimer-avis-design-titre"
+      tabindex="-1"
+    >
+      <div class="modal__dialog">
+        <a class="modal__close" href="#contenu" aria-label="Fermer la fenêtre">×</a
+        >
+        <h2 id="supprimer-avis-design-titre">Supprimer cet avis ?</h2>
+        <p class="text-muted">
+          Votre avis sur Design of Everyday Things sera masqué dans cet aperçu.
+        </p>
+        <p class="modal__hint"></p>
+        <div class="actions">
+          <a class="button" href="#contenu">Revenir</a>
+          <a class="button button--danger" href="#avis-retire-design">Supprimer mon avis</a
+          >
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

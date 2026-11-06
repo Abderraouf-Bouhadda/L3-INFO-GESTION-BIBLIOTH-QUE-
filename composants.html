@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Composants &amp; fenêtres — Bibliothèque de l’ESST. Simulation statique des espaces étudiant et administration."
+    />
+    <meta name="theme-color" content="#3c6dac" />
+    <title>Composants &amp; fenêtres — Bibliothèque ESST</title>
+    <link rel="icon" type="image/png" href="assets/logo/ESST-logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&amp;family=Playfair+Display:wght@400;500&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#contenu">Aller au contenu</a>
+    <header class="site-header">
+      <div class="site-header__inner container">
+        <a class="site-header__logo" href="index.html" aria-label="ESST — Accueil">
+          <img
+            src="assets/logo/ESST-logo.png"
+            width="450"
+            height="200"
+            alt="ESST — École Supérieure des Sciences et Technologies"
+          />
+        </a>
+        <input
+          class="site-header__toggle"
+          type="checkbox"
+          id="menu-mobile"
+          aria-label="Afficher ou masquer le menu"
+          aria-controls="navigation-principale"
+        />
+        <label class="site-header__burger" for="menu-mobile">
+          <span></span><span></span><span></span>
+          <span class="visually-hidden">Menu principal</span>
+        </label>
+        <nav class="site-header__nav" id="navigation-principale" aria-label="Navigation principale">
+          <a href="catalogue.html">Catalogue</a>
+          <a href="mes-emprunts.html">Mes ressources</a>
+          <a href="aide.html">Aide</a>
+          <a class="site-header__switch" href="index.html#choisir-espace">Changer d’espace</a
+          >
+          <details class="dropdown site-header__account">
+            <summary>Mon espace ESST</summary>
+            <div class="dropdown__menu">
+              <a href="catalogue.html">Étudiant</a>
+              <a href="tableau-de-bord.html">Admin</a>
+              <a href="profil-etudiant.html">Mon profil</a>
+              <a href="connexion.html">Se connecter</a>
+              <a href="inscription.html">Créer mon compte ESST</a>
+            </div>
+          </details>
+        </nav>
+      </div>
+    </header>
+
+    <main id="contenu" class="components-page container" tabindex="-1">
+      <div class="page-heading">
+        <div>
+          <h1>Composants &amp; fenêtres</h1>
+          <p class="page-heading__description">
+            Les éléments communs du portail documentaire ESST.
+          </p>
+        </div>
+      </div>
+
+      <section class="panel">
+        <h2>Boutons, champs et états</h2>
+        <div class="actions">
+          <a class="button button--primary" href="catalogue.html">Explorer le catalogue</a
+          ><a class="button" href="detail-livre.html">Consulter</a
+          ><a class="button button--danger" href="#supprimer">Supprimer</a
+          ><button class="button" type="button" disabled>Indisponible</button
+          ><span class="badge">Disponible</span>
+        </div>
+        <div class="section-gap">
+          <div class="field">
+            <label for="composant-email">Adresse e-mail ESST</label>
+            <input id="composant-email" type="email" placeholder="prenom.nom@esst-sup.com" required/>
+
+            <span class="field__error">Veuillez renseigner une valeur valide.</span
+            >
+          </div>
+        </div>
+        <div class="notice notice--error section-gap">
+          Exemple d’erreur : veuillez saisir une adresse e-mail valide.
+        </div>
+      </section>
+      <div class="book-grid section-gap">
+        <article class="book-card book-card--info">
+          <a class="book-cover" href="detail-livre.html" aria-label="Voir Clean Code">
+            <span class="book-cover__label">Bibliothèque ESST<br />Ressources &amp; savoirs</span
+            >
+            <span class="book-cover__title">Clean<br />Code</span>
+          </a>
+          <p class="book-card__category">Informatique</p>
+          <h2 class="book-card__title">
+            <a href="detail-livre.html">Clean Code</a>
+          </h2>
+          <p class="book-card__author">Robert C. Martin</p>
+          <p class="book-card__meta">★ 4,8 · Disponible</p>
+          <a class="button button--block button--small" href="detail-livre.html" aria-label="Voir Clean Code">Voir le livre</a
+          >
+        </article>
+      </div>
+      <h2 class="section-gap">Fenêtres d’action · Bibliothèque ESST</h2>
+      <div class="components-grid">
+        <section class="panel">
+          <h2>Emprunter Clean Code</h2>
+          <p class="text-muted">
+            Confirmez votre demande de prêt à la bibliothèque ESST.
+          </p>
+          <p class="text-small text-muted">
+            Durée : 14 jours. Retrait au comptoir de l’école.
+          </p>
+          <a class="button button--primary" href="#emprunter">Ouvrir la fenêtre</a
+          >
+        </section>
+        <section class="panel">
+          <h2>Réserver un ouvrage</h2>
+          <p class="text-muted">
+            Réseaux informatiques est actuellement indisponible.
+          </p>
+          <p class="text-small text-muted">
+            Votre position : 2e sur la liste d’attente. Un e-mail ESST vous
+            préviendra.
+          </p>
+          <a class="button button--primary" href="#reserver">Ouvrir la fenêtre</a
+          >
+        </section>
+        <section class="panel">
+          <h2>Renouveler mon emprunt</h2>
+          <p class="text-muted">Prolongez votre lecture de Clean Code.</p>
+          <p class="text-small text-muted">
+            Nouvelle échéance : +14 jours, si aucune réservation n’est en
+            attente.
+          </p>
+          <a class="button button--primary" href="#renouveler">Ouvrir la fenêtre</a
+          >
+        </section>
+        <section class="panel">
+          <h2>Retourner un ouvrage</h2>
+          <p class="text-muted">
+            Vous souhaitez rendre Clean Code à la bibliothèque.
+          </p>
+          <p class="text-small text-muted">
+            Déposez-le au comptoir ESST. Le personnel validera votre retour.
+          </p>
+          <a class="button button--primary" href="#retourner">Ouvrir la fenêtre</a
+          >
+        </section>
+        <section class="panel">
+          <h2>Annuler la réservation ?</h2>
+          <p class="text-muted">
+            La réservation de Réseaux informatiques sera annulée.
+          </p>
+          <p class="text-small text-muted">
+            Vous perdez votre position dans la file d’attente.
+          </p>
+          <a class="button button--danger" href="#annuler">Ouvrir la fenêtre</a>
+        </section>
+        <section class="panel">
+          <h2>Supprimer cet ouvrage ?</h2>
+          <p class="text-muted">Clean Code sera supprimé du catalogue ESST.</p>
+          <p class="text-small text-muted">
+            La suppression est bloquée lorsqu’un exemplaire est encore emprunté.
+          </p>
+          <a class="button button--danger" href="#supprimer">Ouvrir la fenêtre</a
+          >
+        </section>
+        <section class="panel">
+          <h2>Votre avis sur Clean Code</h2>
+          <form class="form" action="mes-avis.html#confirmation" method="get">
+            <fieldset>
+              <legend>Votre note</legend>
+              <div class="rating">
+                <input class="visually-hidden" type="radio" name="note" value="5" id="composants-avis-5"/><label for="composants-avis-5"><span aria-hidden="true">★</span
+                  ><span class="visually-hidden">5 étoiles</span></label
+                ><input
+                  class="visually-hidden"
+                  type="radio"
+                  name="note"
+                  value="4"
+                  id="composants-avis-4"
+                  checked
+                /><label for="composants-avis-4"><span aria-hidden="true">★</span
+                  ><span class="visually-hidden">4 étoiles</span></label
+                ><input class="visually-hidden" type="radio" name="note" value="3" id="composants-avis-3"/><label for="composants-avis-3"><span aria-hidden="true">★</span
+                  ><span class="visually-hidden">3 étoiles</span></label
+                ><input class="visually-hidden" type="radio" name="note" value="2" id="composants-avis-2"/><label for="composants-avis-2"><span aria-hidden="true">★</span
+                  ><span class="visually-hidden">2 étoiles</span></label
+                ><input class="visually-hidden" type="radio" name="note" value="1" id="composants-avis-1"/><label for="composants-avis-1"><span aria-hidden="true">★</span
+                  ><span class="visually-hidden">1 étoile</span></label
+                >
+              </div>
+            </fieldset>
+            <div class="field">
+              <label for="composants-avis-commentaire">Votre commentaire</label>
+              <textarea
+                id="composants-avis-commentaire"
+                placeholder="Votre expérience de lecture…"
+                required
+                maxlength="1000"
+              ></textarea>
+            </div>
+            <div class="actions">
+              <a class="button" href="#contenu">Annuler</a>
+              <button class="button button--primary" type="submit">
+                Publier mon avis
+              </button>
+            </div>
+          </form>
+        </section>
+        <section class="panel">
+          <h2>Membre de la communauté ESST</h2>
+          <form class="form" action="etudiants-enseignants.html#confirmation" method="get">
+            <div class="field">
+              <label for="composants-membre-nom">Nom et prénom</label>
+              <input
+                id="composants-membre-nom"
+                type="text"
+                placeholder="Nom complet"
+                required
+                autocomplete="name"
+              />
+
+              <span class="field__error">Veuillez renseigner une valeur valide.</span
+              >
+            </div>
+
+            <div class="field">
+              <label for="composants-membre-email">Adresse e-mail ESST</label>
+              <input
+                id="composants-membre-email"
+                type="email"
+                placeholder="prenom.nom@esst-sup.com"
+                required
+                autocomplete="email"
+              />
+
+              <span class="field__error">Veuillez renseigner une valeur valide.</span
+              >
+            </div>
+
+            <div class="form__row">
+              <div class="field">
+                <label for="composants-membre-profil">Profil</label>
+                <select id="composants-membre-profil">
+                  <option>Étudiant</option>
+                  <option>Enseignant</option>
+                  <option>Personnel</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="composants-membre-matricule">Matricule</label>
+                <input id="composants-membre-matricule" type="text" placeholder="ESST-2026-0000" required/>
+
+                <span class="field__error">Veuillez renseigner une valeur valide.</span
+                >
+              </div>
+            </div>
+            <button class="button button--primary" type="submit">
+              Enregistrer le membre
+            </button>
+          </form>
+        </section>
+        <section class="panel">
+          <h2>Mot de passe oublié ?</h2>
+          <p class="text-muted">
+            Recevez un lien de réinitialisation sur votre adresse ESST.
+          </p>
+          <form class="form" action="connexion.html#lien-envoye" method="get">
+            <div class="field">
+              <label for="recuperation-email">Adresse e-mail ESST</label>
+              <input id="recuperation-email" type="email" placeholder="prenom.nom@esst-sup.com" required/>
+
+              <span class="field__error">Veuillez renseigner une valeur valide.</span
+              >
+            </div>
+
+            <button class="button button--primary" type="submit">
+              Envoyer le lien
+            </button>
+          </form>
+        </section>
+        <section class="empty-state">
+          <h2>Aucun résultat</h2>
+          <p>Essayez une autre discipline ou consultez tous les ouvrages.</p>
+          <a class="button" href="catalogue.html">Voir le catalogue</a>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner container">
+        <a class="site-footer__logo" href="index.html" aria-label="ESST — Accueil">
+          <img
+            src="assets/logo/ESST-logo.png"
+            width="450"
+            height="200"
+            alt="ESST — École Supérieure des Sciences et Technologies"
+          />
+        </a>
+        <p class="site-footer__description">
+          Bibliothèque de l’école · Étudiants · Enseignants · Personnel<br />
+          Simulation HTML/CSS · Données de démonstration
+        </p>
+        <nav class="site-footer__links" aria-label="Navigation de pied de page">
+          <a href="catalogue.html">Catalogue</a>
+          <a href="aide.html">Aide</a>
+          <a href="aide.html#contact">Contact</a>
+          <a href="composants.html">Composants &amp; fenêtres</a>
+        </nav>
+      </div>
+    </footer>
+
+    <section class="modal" id="emprunter" role="dialog" aria-labelledby="emprunter-titre" tabindex="-1">
+      <div class="modal__dialog">
+        <a class="modal__close" href="#contenu" aria-label="Fermer la fenêtre">×</a
+        >
+        <h2 id="emprunter-titre">Emprunter Clean Code</h2>
+        <p class="text-muted">
+          Confirmez votre demande de prêt à la bibliothèque ESST.
+        </p>
+        <p class="modal__hint">
+          Durée : 14 jours. Retrait au comptoir de l’école.
+        </p>
+        <div class="actions">
+          <a class="button" href="#contenu">Revenir</a>
+          <a class="button button--primary" href="mes-emprunts.html#confirmation">Confirmer l’emprunt</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section class="modal" id="reserver" role="dialog" aria-labelledby="reserver-titre" tabindex="-1">
+      <div class="modal__dialog">
+        <a class="modal__close" href="#contenu" aria-label="Fermer la fenêtre">×</a
+        >
+        <h2 id="reserver-titre">Réserver un ouvrage</h2>
+        <p class="text-muted">
+          Réseaux informatiques est actuellement indisponible.
+        </p>
+        <p class="modal__hint">
+          Votre position : 2e sur la liste d’attente. Un e-mail ESST vous
+          préviendra.
+        </p>
+        <div class="actions">
+          <a class="button" href="#contenu">Revenir</a>
+          <a class="button button--primary" href="mes-reservations.html#confirmation">Confirmer la réservation</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section class="modal" id="renouveler" role="dialog" aria-labelledby="renouveler-titre" tabindex="-1">
+      <div class="modal__dialog">
+        <a class="modal__close" href="#contenu" aria-label="Fermer la fenêtre">×</a
+        >
+        <h2 id="renouveler-titre">Renouveler mon emprunt</h2>
+        <p class="text-muted">Prolongez votre lecture de Clean Code.</p>
+        <p class="modal__hint">
+          Nouvelle échéance : +14 jours, si aucune réservation n’est en attente.
+        </p>
+        <div class="actions">
+          <a class="button" href="#contenu">Revenir</a>
+          <a class="button button--primary" href="mes-emprunts.html#confirmation">Renouveler de 14 jours</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section class="modal" id="retourner" role="dialog" aria-labelledby="retourner-titre" tabindex="-1">
+      <div class="modal__dialog">
+        <a class="modal__close" href="#contenu" aria-label="Fermer la fenêtre">×</a
+        >
+        <h2 id="retourner-titre">Retourner un ouvrage</h2>
+        <p class="text-muted">
+          Vous souhaitez rendre Clean Code à la bibliothèque.
+        </p>
+        <p class="modal__hint">
+          Déposez-le au comptoir ESST. Le personnel validera votre retour.
+        </p>
+        <div class="actions">
+          <a class="button" href="#contenu">Revenir</a>
+          <a class="button button--primary" href="mes-emprunts.html#retour-signale">Signaler le retour</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section class="modal" id="annuler" role="dialog" aria-labelledby="annuler-titre" tabindex="-1">
+      <div class="modal__dialog">
+        <a class="modal__close" href="#contenu" aria-label="Fermer la fenêtre">×</a
+        >
+        <h2 id="annuler-titre">Annuler la réservation ?</h2>
+        <p class="text-muted">
+          La réservation de Réseaux informatiques sera annulée.
+        </p>
+        <p class="modal__hint">
+          Vous perdez votre position dans la file d’attente.
+        </p>
+        <div class="actions">
+          <a class="button" href="#contenu">Revenir</a>
+          <a class="button button--danger" href="mes-reservations.html#confirmation">Annuler la réservation</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section class="modal" id="supprimer" role="dialog" aria-labelledby="supprimer-titre" tabindex="-1">
+      <div class="modal__dialog">
+        <a class="modal__close" href="#contenu" aria-label="Fermer la fenêtre">×</a
+        >
+        <h2 id="supprimer-titre">Supprimer cet ouvrage ?</h2>
+        <p class="text-muted">Clean Code sera supprimé du catalogue ESST.</p>
+        <p class="modal__hint">
+          La suppression est bloquée lorsqu’un exemplaire est encore emprunté.
+        </p>
+        <div class="actions">
+          <a class="button" href="#contenu">Revenir</a>
+          <a class="button button--danger" href="gestion-livres.html#confirmation">Simuler la suppression</a
+          >
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

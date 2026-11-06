@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Aide et contact — Bibliothèque de l’ESST. Simulation statique des espaces étudiant et administration."
+    />
+    <meta name="theme-color" content="#3c6dac" />
+    <title>Aide et contact — Bibliothèque ESST</title>
+    <link rel="icon" type="image/png" href="assets/logo/ESST-logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&amp;family=Playfair+Display:wght@400;500&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#contenu">Aller au contenu</a>
+    <header class="site-header">
+      <div class="site-header__inner container">
+        <a class="site-header__logo" href="index.html" aria-label="ESST — Accueil">
+          <img
+            src="assets/logo/ESST-logo.png"
+            width="450"
+            height="200"
+            alt="ESST — École Supérieure des Sciences et Technologies"
+          />
+        </a>
+        <input
+          class="site-header__toggle"
+          type="checkbox"
+          id="menu-mobile"
+          aria-label="Afficher ou masquer le menu"
+          aria-controls="navigation-principale"
+        />
+        <label class="site-header__burger" for="menu-mobile">
+          <span></span><span></span><span></span>
+          <span class="visually-hidden">Menu principal</span>
+        </label>
+        <nav class="site-header__nav" id="navigation-principale" aria-label="Navigation principale">
+          <a href="catalogue.html">Catalogue</a>
+          <a href="mes-emprunts.html">Mes ressources</a>
+          <a href="aide.html">Aide</a>
+          <a class="site-header__switch" href="index.html#choisir-espace">Changer d’espace</a
+          >
+          <details class="dropdown site-header__account">
+            <summary>Mon espace ESST</summary>
+            <div class="dropdown__menu">
+              <a href="catalogue.html">Étudiant</a>
+              <a href="tableau-de-bord.html">Admin</a>
+              <a href="profil-etudiant.html">Mon profil</a>
+              <a href="connexion.html">Se connecter</a>
+              <a href="inscription.html">Créer mon compte ESST</a>
+            </div>
+          </details>
+        </nav>
+      </div>
+    </header>
+
+    <main id="contenu" class="help-layout container" tabindex="-1">
+      <div class="page-heading">
+        <div>
+          <h1>Aide · Bibliothèque ESST</h1>
+          <p class="page-heading__description">
+            Retrouvez les informations utiles pour explorer la bibliothèque.
+          </p>
+        </div>
+      </div>
+
+      <div class="stack">
+        <section class="panel">
+          <h2>Les espaces de la bibliothèque</h2>
+          <div class="actions">
+            <a class="button button--primary" href="catalogue.html">Espace étudiant</a
+            >
+            <a class="button" href="tableau-de-bord.html">Espace administrateur</a
+            >
+          </div>
+        </section>
+        <section aria-labelledby="questions-titre">
+          <h2 id="questions-titre">Questions fréquentes</h2>
+          <details class="panel">
+            <summary>Comment emprunter un ouvrage ?</summary>
+            <p>
+              Ouvrez une fiche depuis le catalogue, choisissez « Emprunter ce
+              livre », puis confirmez la demande. Le prêt présenté dans la
+              maquette dure 14 jours et le retrait se fait au comptoir de
+              l’école.
+            </p>
+          </details>
+          <details class="panel">
+            <summary>Comment réserver un ouvrage indisponible ?</summary>
+            <p>
+              Choisissez « Réserver » sur sa fiche. La page « Mes réservations »
+              présente une file d’attente et un exemple de livre prêt à retirer
+              sous 48 heures.
+            </p>
+          </details>
+          <details class="panel">
+            <summary>Comment fonctionne cette simulation ?</summary>
+            <p>
+              Les pages présentent des données statiques. Les fenêtres, onglets,
+              favoris et menus utilisent uniquement le HTML et le CSS. Les
+              recherches libres et les modifications de compte ne sont pas
+              enregistrées.
+            </p>
+          </details>
+          <details class="panel">
+            <summary>
+              Pourquoi les données portent-elles des dates d’octobre 2026 ?
+            </summary>
+            <p>
+              Ces dates correspondent aux exemples de la maquette Figma. Elles
+              sont conservées pour la démonstration et ne représentent pas
+              l’état actuel de la bibliothèque.
+            </p>
+          </details>
+        </section>
+        <section class="panel" id="contact">
+          <h2>Contact</h2>
+          <p>
+            Pour toute question sur un ouvrage, un emprunt ou une réservation,
+            adressez-vous au comptoir de la bibliothèque de l’École Supérieure
+            des Sciences et Technologies.
+          </p>
+          <a href="index.html">Retour à l’accueil ESST →</a>
+        </section>
+        <section class="panel" id="conditions">
+          <h2>Conditions de la démonstration</h2>
+          <p>
+            Ce portail est une simulation pédagogique. Utilisez des informations
+            fictives dans les formulaires. Aucun compte, emprunt, e-mail ou
+            changement de sécurité réel n’est créé.
+          </p>
+          <p class="text-muted text-small">
+            Les polices peuvent être téléchargées depuis Google Fonts lors de
+            l’ouverture ; Arial et Georgia servent de polices de secours hors
+            ligne.
+          </p>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner container">
+        <a class="site-footer__logo" href="index.html" aria-label="ESST — Accueil">
+          <img
+            src="assets/logo/ESST-logo.png"
+            width="450"
+            height="200"
+            alt="ESST — École Supérieure des Sciences et Technologies"
+          />
+        </a>
+        <p class="site-footer__description">
+          Bibliothèque de l’école · Étudiants · Enseignants · Personnel<br />
+          Simulation HTML/CSS · Données de démonstration
+        </p>
+        <nav class="site-footer__links" aria-label="Navigation de pied de page">
+          <a href="catalogue.html">Catalogue</a>
+          <a href="aide.html">Aide</a>
+          <a href="aide.html#contact">Contact</a>
+          <a href="composants.html">Composants &amp; fenêtres</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

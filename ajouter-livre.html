@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Ajouter un livre — Bibliothèque de l’ESST. Simulation statique des espaces étudiant et administration."
+    />
+    <meta name="theme-color" content="#3c6dac" />
+    <title>Ajouter un livre — Bibliothèque ESST</title>
+    <link rel="icon" type="image/png" href="assets/logo/ESST-logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&amp;family=Playfair+Display:wght@400;500&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#contenu">Aller au contenu</a>
+    <header class="site-header">
+      <div class="site-header__inner container">
+        <a class="site-header__logo" href="index.html" aria-label="ESST — Accueil">
+          <img
+            src="assets/logo/ESST-logo.png"
+            width="450"
+            height="200"
+            alt="ESST — École Supérieure des Sciences et Technologies"
+          />
+        </a>
+        <input
+          class="site-header__toggle"
+          type="checkbox"
+          id="menu-mobile"
+          aria-label="Afficher ou masquer le menu"
+          aria-controls="navigation-principale"
+        />
+        <label class="site-header__burger" for="menu-mobile">
+          <span></span><span></span><span></span>
+          <span class="visually-hidden">Menu principal</span>
+        </label>
+        <nav class="site-header__nav" id="navigation-principale" aria-label="Navigation principale">
+          <a href="catalogue.html">Catalogue</a>
+          <a href="mes-emprunts.html">Mes ressources</a>
+          <a href="aide.html">Aide</a>
+          <a class="site-header__switch" href="index.html#choisir-espace">Changer d’espace</a
+          >
+          <details class="dropdown site-header__account">
+            <summary>Mon espace ESST</summary>
+            <div class="dropdown__menu">
+              <a href="catalogue.html">Étudiant</a>
+              <a href="tableau-de-bord.html">Admin</a>
+              <a href="profil-etudiant.html">Mon profil</a>
+              <a href="connexion.html">Se connecter</a>
+              <a href="inscription.html">Créer mon compte ESST</a>
+            </div>
+          </details>
+        </nav>
+      </div>
+    </header>
+
+    <div class="workspace container">
+      <aside class="sidebar">
+        <p class="sidebar__label">Gestion de la bibliothèque</p>
+        <nav class="sidebar__nav" aria-label="Menu administrateur">
+          <a class="sidebar__link" href="tableau-de-bord.html">Tableau de bord</a
+          >
+          <a class="sidebar__link active" href="gestion-livres.html" aria-current="page">Livres</a
+          >
+          <a class="sidebar__link" href="etudiants-enseignants.html">Étudiants et enseignants</a
+          >
+          <a class="sidebar__link" href="roles-permissions.html">Rôles et permissions</a
+          >
+          <a class="sidebar__link" href="statistiques.html">Statistiques</a>
+          <a class="sidebar__link" href="securite.html">Sécurité</a>
+        </nav>
+        <section class="sidebar__note" aria-label="Bibliothèque ESST">
+          <h2>Bibliothèque ESST</h2>
+          <p>
+            Un espace dédié au suivi des ressources et des prêts de l’école.
+          </p>
+        </section>
+      </aside>
+
+      <main class="page-content" id="contenu" tabindex="-1">
+        <div class="page-heading">
+          <div>
+            <h1>Ajouter un ouvrage</h1>
+            <p class="page-heading__description">
+              Enrichissez les collections de la bibliothèque de l’école.
+            </p>
+          </div>
+        </div>
+
+        <div class="book-editor">
+          <section class="panel">
+            <h2>Informations de l’ouvrage</h2>
+
+            <form class="form" action="gestion-livres.html#confirmation" method="get">
+              <div class="field">
+                <label for="livre-titre">Titre *</label>
+                <input id="livre-titre" type="text" placeholder="Titre de l’ouvrage" required/>
+
+                <span class="field__error">Veuillez renseigner une valeur valide.</span
+                >
+              </div>
+
+              <div class="form__row">
+                <div class="field">
+                  <label for="livre-auteur">Auteur *</label>
+                  <input id="livre-auteur" type="text" placeholder="Nom de l’auteur" required/>
+
+                  <span class="field__error">Veuillez renseigner une valeur valide.</span
+                  >
+                </div>
+
+                <div class="field">
+                  <label for="livre-discipline">Spécialité *</label>
+                  <select id="livre-discipline" required>
+                    <option value="">Sélectionner</option>
+                    <option>Informatique</option>
+                    <option>Science et technologie</option>
+                    <option>Chimie</option>
+                    <option>E-commerce</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form__row">
+                <div class="field">
+                  <label for="livre-isbn">ISBN *</label>
+                  <input
+                    id="livre-isbn"
+                    type="text"
+                    placeholder="13 chiffres"
+                    required
+                    inputmode="numeric"
+                    pattern="[0-9]{13}"
+                    maxlength="13"
+                  />
+
+                  <span class="field__error">Veuillez renseigner une valeur valide.</span
+                  >
+                </div>
+
+                <div class="field">
+                  <label for="livre-annee">Année</label>
+                  <input id="livre-annee" type="number" placeholder="Ex. : 2026" min="1450" max="2100"/>
+                </div>
+              </div>
+              <div class="form__row">
+                <div class="field">
+                  <label for="livre-exemplaires">Nombre d’exemplaires *</label>
+                  <input
+                    id="livre-exemplaires"
+                    type="number"
+                    placeholder=""
+                    value="1"
+                    required
+                    min="1"
+                    max="9999"
+                  />
+
+                  <span class="field__error">Veuillez renseigner une valeur valide.</span
+                  >
+                </div>
+
+                <div class="field">
+                  <label for="livre-langue">Langue</label>
+                  <select id="livre-langue">
+                    <option>Français</option>
+                    <option>Anglais</option>
+                  </select>
+                </div>
+              </div>
+              <div class="field">
+                <label for="livre-description">Description</label>
+                <textarea id="livre-description" placeholder="Résumé et intérêt pédagogique…"></textarea>
+              </div>
+              <div class="actions">
+                <button class="button button--primary" type="submit">
+                  Ajouter au catalogue</button
+                ><a class="button" href="gestion-livres.html">Annuler</a>
+              </div>
+            </form>
+          </section>
+          <section class="panel">
+            <h2>Couverture</h2>
+            <div class="book-editor__cover">Couverture<br />de l’ouvrage</div>
+            <div class="field">
+              <label for="livre-couverture">Importer une image</label>
+              <input
+                class="book-editor__upload"
+                id="livre-couverture"
+                type="file"
+                accept="image/jpeg,image/png"
+                aria-describedby="couverture-aide"
+              />
+              <span class="field__hint" id="couverture-aide">JPG ou PNG · 5 Mo maximum conseillés. Le fichier reste sur
+                votre appareil ; l’aperçu n’est pas modifié.</span
+              >
+            </div>
+            <h3 class="section-gap">Publication</h3>
+            <span class="badge">Brouillon</span>
+            <p class="text-muted text-small section-gap">
+              Les champs marqués * sont obligatoires.
+            </p>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner container">
+        <a class="site-footer__logo" href="index.html" aria-label="ESST — Accueil">
+          <img
+            src="assets/logo/ESST-logo.png"
+            width="450"
+            height="200"
+            alt="ESST — École Supérieure des Sciences et Technologies"
+          />
+        </a>
+        <p class="site-footer__description">
+          Bibliothèque de l’école · Étudiants · Enseignants · Personnel<br />
+          Simulation HTML/CSS · Données de démonstration
+        </p>
+        <nav class="site-footer__links" aria-label="Navigation de pied de page">
+          <a href="catalogue.html">Catalogue</a>
+          <a href="aide.html">Aide</a>
+          <a href="aide.html#contact">Contact</a>
+          <a href="composants.html">Composants &amp; fenêtres</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

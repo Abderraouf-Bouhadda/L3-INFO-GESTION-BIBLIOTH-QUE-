@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Étudiants et enseignants — Bibliothèque de l’ESST. Simulation statique des espaces étudiant et administration."
+    />
+    <meta name="theme-color" content="#3c6dac" />
+    <title>Étudiants et enseignants — Bibliothèque ESST</title>
+    <link rel="icon" type="image/png" href="assets/logo/ESST-logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&amp;family=Playfair+Display:wght@400;500&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#contenu">Aller au contenu</a>
+    <header class="site-header">
+      <div class="site-header__inner container">
+        <a class="site-header__logo" href="index.html" aria-label="ESST — Accueil">
+          <img
+            src="assets/logo/ESST-logo.png"
+            width="450"
+            height="200"
+            alt="ESST — École Supérieure des Sciences et Technologies"
+          />
+        </a>
+        <input
+          class="site-header__toggle"
+          type="checkbox"
+          id="menu-mobile"
+          aria-label="Afficher ou masquer le menu"
+          aria-controls="navigation-principale"
+        />
+        <label class="site-header__burger" for="menu-mobile">
+          <span></span><span></span><span></span>
+          <span class="visually-hidden">Menu principal</span>
+        </label>
+        <nav class="site-header__nav" id="navigation-principale" aria-label="Navigation principale">
+          <a href="catalogue.html">Catalogue</a>
+          <a href="mes-emprunts.html">Mes ressources</a>
+          <a href="aide.html">Aide</a>
+          <a class="site-header__switch" href="index.html#choisir-espace">Changer d’espace</a
+          >
+          <details class="dropdown site-header__account">
+            <summary>Mon espace ESST</summary>
+            <div class="dropdown__menu">
+              <a href="catalogue.html">Étudiant</a>
+              <a href="tableau-de-bord.html">Admin</a>
+              <a href="profil-etudiant.html">Mon profil</a>
+              <a href="connexion.html">Se connecter</a>
+              <a href="inscription.html">Créer mon compte ESST</a>
+            </div>
+          </details>
+        </nav>
+      </div>
+    </header>
+
+    <div class="workspace container">
+      <aside class="sidebar">
+        <p class="sidebar__label">Gestion de la bibliothèque</p>
+        <nav class="sidebar__nav" aria-label="Menu administrateur">
+          <a class="sidebar__link" href="tableau-de-bord.html">Tableau de bord</a
+          >
+          <a class="sidebar__link" href="gestion-livres.html">Livres</a>
+          <a class="sidebar__link active" href="etudiants-enseignants.html" aria-current="page">Étudiants et enseignants</a
+          >
+          <a class="sidebar__link" href="roles-permissions.html">Rôles et permissions</a
+          >
+          <a class="sidebar__link" href="statistiques.html">Statistiques</a>
+          <a class="sidebar__link" href="securite.html">Sécurité</a>
+        </nav>
+        <section class="sidebar__note" aria-label="Bibliothèque ESST">
+          <h2>Bibliothèque ESST</h2>
+          <p>
+            Un espace dédié au suivi des ressources et des prêts de l’école.
+          </p>
+        </section>
+      </aside>
+
+      <main class="page-content" id="contenu" tabindex="-1">
+        <div class="page-heading">
+          <div>
+            <h1>Étudiants et enseignants</h1>
+            <p class="page-heading__description">
+              Gérez les accès de la communauté de l’ESST.
+            </p>
+          </div>
+          <a class="button button--primary" href="#ajouter-membre">Ajouter un membre</a
+          >
+        </div>
+        <div class="notice notice--success inline-result" id="confirmation">
+          <span class="notice__title">Démonstration confirmée</span>
+          <p>
+            La modification du membre a été simulée. Aucune donnée n’est
+            enregistrée.
+          </p>
+        </div>
+        <section class="stats-grid" aria-label="Indicateurs">
+          <article class="stat-card">
+            <span class="stat-card__label">Étudiants</span>
+            <strong class="stat-card__value">342</strong>
+            <span class="stat-card__description">comptes de l’école</span>
+          </article>
+
+          <article class="stat-card">
+            <span class="stat-card__label">Enseignants</span>
+            <strong class="stat-card__value">40</strong>
+            <span class="stat-card__description">ressources pédagogiques</span>
+          </article>
+
+          <article class="stat-card">
+            <span class="stat-card__label">Personnel</span>
+            <strong class="stat-card__value">04</strong>
+            <span class="stat-card__description">gestion de la bibliothèque</span
+            >
+          </article>
+        </section>
+        <form class="search" action="etudiants-enseignants.html#resultats" method="get">
+          <div class="field search__field">
+            <label for="membre-recherche">Rechercher un membre</label
+            ><input id="membre-recherche" type="search" placeholder="Nom, e-mail ESST ou matricule…"/>
+          </div>
+
+          <div class="field">
+            <label for="membre-filtre-profil">Profil</label>
+            <select id="membre-filtre-profil">
+              <option>Tous les profils</option>
+              <option>Étudiant</option>
+              <option>Enseignant</option>
+              <option>Personnel</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="membre-filtre-statut">Statut</label>
+            <select id="membre-filtre-statut">
+              <option>Tous les statuts</option>
+              <option>Actif</option>
+              <option>Suspendu</option>
+            </select>
+          </div>
+
+          <button class="button" type="submit">Rechercher</button>
+        </form>
+        <div class="notice notice--success inline-result" id="resultats">
+          <span class="notice__title">Démonstration confirmée</span>
+          <p>
+            Voici les quatre membres fictifs de démonstration. Les critères ne
+            sont pas calculés. Aucune donnée n’est enregistrée.
+          </p>
+        </div>
+        <div class="section-gap">
+          <div class="table-wrap">
+            <table class="data-table">
+              <caption class="visually-hidden">
+                Membres fictifs de la communauté ESST
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">Membre ESST</th>
+                  <th scope="col">E-mail</th>
+                  <th scope="col">Profil</th>
+                  <th scope="col">Statut</th>
+                  <th scope="col">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <span class="data-table__title">Raouf Bouhadda</span
+                    >ESST-2025-0142
+                  </td>
+                  <td>raouf.bouhadda@example.com</td>
+                  <td>Étudiant · L3</td>
+                  <td>Actif</td>
+                  <td>
+                    <div class="data-table__actions">
+                      <a href="#modifier-membre">Modifier</a><span>·</span
+                      ><a href="#suspendre-raouf">Suspendre</a>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="data-table__title">Sarah Benali</span></td>
+                  <td>sarah.benali@example.com</td>
+                  <td>Enseignante</td>
+                  <td>Actif</td>
+                  <td>
+                    <div class="data-table__actions">
+                      <a href="#modifier-membre">Modifier</a><span>·</span
+                      ><a href="#suspendre-sarah">Voir</a>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <span class="data-table__title">Amine Meziane</span
+                    >ESST-2026-0035
+                  </td>
+                  <td>amine.meziane@example.com</td>
+                  <td>Étudiant · L2</td>
+                  <td>Actif</td>
+                  <td>
+                    <div class="data-table__actions">
+                      <a href="#modifier-membre">Modifier</a><span>·</span
+                      ><a href="#suspendre-amine">Suspendre</a>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="data-table__title">Lina Haddad</span></td>
+                  <td>lina.haddad@example.com</td>
+                  <td>Personnel</td>
+                  <td>Actif</td>
+                  <td>
+                    <div class="data-table__actions">
+                      <a href="#modifier-membre">Modifier</a><span>·</span
+                      ><a href="#suspendre-lina">Voir</a>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner container">
+        <a class="site-footer__logo" href="index.html" aria-label="ESST — Accueil">
+          <img
+            src="assets/logo/ESST-logo.png"
+            width="450"
+            height="200"
+            alt="ESST — École Supérieure des Sciences et Technologies"
+          />
+        </a>
+        <p class="site-footer__description">
+          Bibliothèque de l’école · Étudiants · Enseignants · Personnel<br />
+          Simulation HTML/CSS · Données de démonstration
+        </p>
+        <nav class="site-footer__links" aria-label="Navigation de pied de page">
+          <a href="catalogue.html">Catalogue</a>
+          <a href="aide.html">Aide</a>
+          <a href="aide.html#contact">Contact</a>
+          <a href="composants.html">Composants &amp; fenêtres</a>
+        </nav>
+      </div>
+    </footer>
+
+    <section
+      class="modal"
+      id="ajouter-membre"
+      role="dialog"
+      aria-labelledby="ajouter-membre-titre"
+      tabindex="-1"
+    >
+      <div class="modal__dialog">
+        <a class="modal__close" href="#contenu" aria-label="Fermer la fenêtre">×</a
+        >
+        <h2 id="ajouter-membre-titre">Membre de la communauté ESST</h2>
+
+        <form class="form" action="etudiants-enseignants.html#confirmation" method="get">
+          <div class="field">
+            <label for="ajout-nom">Nom et prénom</label>
+            <input id="ajout-nom" type="text" placeholder="Nom complet" required autocomplete="name"/>
+
+            <span class="field__error">Veuillez renseigner une valeur valide.</span
+            >
+          </div>
+
+          <div class="field">
+            <label for="ajout-email">Adresse e-mail ESST</label>
+            <input
+              id="ajout-email"
+              type="email"
+              placeholder="prenom.nom@esst-sup.com"
+              required
+              autocomplete="email"
+            />
+
+            <span class="field__error">Veuillez renseigner une valeur valide.</span
+            >
+          </div>
+
+          <div class="form__row">
+            <div class="field">
+              <label for="ajout-profil">Profil</label>
+              <select id="ajout-profil">
+                <option>Étudiant</option>
+                <option>Enseignant</option>
+                <option>Personnel</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="ajout-matricule">Matricule</label>
+              <input id="ajout-matricule" type="text" placeholder="ESST-2026-0000" required/>
+
+              <span class="field__error">Veuillez renseigner une valeur valide.</span
+              >
+            </div>
+          </div>
+          <button class="button button--primary" type="submit">
+            Enregistrer le membre
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <section
+      class="modal"
+      id="modifier-membre"
+      role="dialog"
+      aria-labelledby="modifier-membre-titre"
+      tabindex="-1"
+    >
+      <div class="modal__dialog">
+        <a class="modal__close" href="#contenu" aria-label="Fermer la fenêtre">×</a
+        >
+        <h2 id="modifier-membre-titre">Modifier un membre ESST</h2>
+
+        <form class="form" action="etudiants-enseignants.html#confirmation" method="get">
+          <div class="field">
+            <label for="modification-nom">Nom et prénom</label>
+            <input id="modification-nom" type="text" placeholder="Nom complet" required autocomplete="name"/>
+
+            <span class="field__error">Veuillez renseigner une valeur valide.</span
+            >
+          </div>
+
+          <div class="field">
+            <label for="modification-email">Adresse e-mail ESST</label>
+            <input
+              id="modification-email"
+              type="email"
+              placeholder="prenom.nom@esst-sup.com"
+              required
+              autocomplete="email"
+            />
+
+            <span class="field__error">Veuillez renseigner une valeur valide.</span
+            >
+          </div>
+
+          <div class="form__row">
+            <div class="field">
+              <label for="modification-profil">Profil</label>
+              <select id="modification-profil">
+                <option>Étudiant</option>
+                <option>Enseignant</option>
+                <option>Personnel</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="modification-matricule">Matricule</label>
+              <input id="modification-matricule" type="text" placeholder="ESST-2026-0000" required/>
+
+              <span class="field__error">Veuillez renseigner une valeur valide.</span
+              >
+            </div>
+          </div>
+          <button class="button button--primary" type="submit">
+            Enregistrer le membre
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <section
+      class="modal"
+      id="suspendre-raouf"
+      role="dialog"
+      aria-labelledby="suspendre-raouf-titre"
+      tabindex="-1"
+    >
+      <div class="modal__dialog">
+        <a class="modal__close" href="#contenu" aria-label="Fermer la fenêtre">×</a
+        >
+        <h2 id="suspendre-raouf-titre">Accès de Raouf Bouhadda</h2>
+        <p class="text-muted">Gérez l’accès de ce membre de démonstration.</p>
+        <p class="modal__hint">Cette action ne modifie aucun compte réel.</p>
+        <div class="actions">
+          <a class="button" href="#contenu">Revenir</a>
+          <a class="button button--primary" href="etudiants-enseignants.html#confirmation">Simuler la modification</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="modal"
+      id="suspendre-sarah"
+      role="dialog"
+      aria-labelledby="suspendre-sarah-titre"
+      tabindex="-1"
+    >
+      <div class="modal__dialog">
+        <a class="modal__close" href="#contenu" aria-label="Fermer la fenêtre">×</a
+        >
+        <h2 id="suspendre-sarah-titre">Accès de Sarah Benali</h2>
+        <p class="text-muted">Gérez l’accès de ce membre de démonstration.</p>
+        <p class="modal__hint">Cette action ne modifie aucun compte réel.</p>
+        <div class="actions">
+          <a class="button" href="#contenu">Revenir</a>
+          <a class="button button--primary" href="etudiants-enseignants.html#confirmation">Simuler la modification</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="modal"
+      id="suspendre-amine"
+      role="dialog"
+      aria-labelledby="suspendre-amine-titre"
+      tabindex="-1"
+    >
+      <div class="modal__dialog">
+        <a class="modal__close" href="#contenu" aria-label="Fermer la fenêtre">×</a
+        >
+        <h2 id="suspendre-amine-titre">Accès de Amine Meziane</h2>
+        <p class="text-muted">Gérez l’accès de ce membre de démonstration.</p>
+        <p class="modal__hint">Cette action ne modifie aucun compte réel.</p>
+        <div class="actions">
+          <a class="button" href="#contenu">Revenir</a>
+          <a class="button button--primary" href="etudiants-enseignants.html#confirmation">Simuler la modification</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="modal"
+      id="suspendre-lina"
+      role="dialog"
+      aria-labelledby="suspendre-lina-titre"
+      tabindex="-1"
+    >
+      <div class="modal__dialog">
+        <a class="modal__close" href="#contenu" aria-label="Fermer la fenêtre">×</a
+        >
+        <h2 id="suspendre-lina-titre">Accès de Lina Haddad</h2>
+        <p class="text-muted">Gérez l’accès de ce membre de démonstration.</p>
+        <p class="modal__hint">Cette action ne modifie aucun compte réel.</p>
+        <div class="actions">
+          <a class="button" href="#contenu">Revenir</a>
+          <a class="button button--primary" href="etudiants-enseignants.html#confirmation">Simuler la modification</a
+          >
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

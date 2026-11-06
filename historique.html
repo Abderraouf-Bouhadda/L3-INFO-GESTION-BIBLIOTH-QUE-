@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Historique — Bibliothèque de l’ESST. Simulation statique des espaces étudiant et administration."
+    />
+    <meta name="theme-color" content="#3c6dac" />
+    <title>Historique — Bibliothèque ESST</title>
+    <link rel="icon" type="image/png" href="assets/logo/ESST-logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&amp;family=Playfair+Display:wght@400;500&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#contenu">Aller au contenu</a>
+    <header class="site-header">
+      <div class="site-header__inner container">
+        <a class="site-header__logo" href="index.html" aria-label="ESST — Accueil">
+          <img
+            src="assets/logo/ESST-logo.png"
+            width="450"
+            height="200"
+            alt="ESST — École Supérieure des Sciences et Technologies"
+          />
+        </a>
+        <input
+          class="site-header__toggle"
+          type="checkbox"
+          id="menu-mobile"
+          aria-label="Afficher ou masquer le menu"
+          aria-controls="navigation-principale"
+        />
+        <label class="site-header__burger" for="menu-mobile">
+          <span></span><span></span><span></span>
+          <span class="visually-hidden">Menu principal</span>
+        </label>
+        <nav class="site-header__nav" id="navigation-principale" aria-label="Navigation principale">
+          <a href="catalogue.html">Catalogue</a>
+          <a href="mes-emprunts.html">Mes ressources</a>
+          <a href="aide.html">Aide</a>
+          <a class="site-header__switch" href="index.html#choisir-espace">Changer d’espace</a
+          >
+          <details class="dropdown site-header__account">
+            <summary>Mon espace ESST</summary>
+            <div class="dropdown__menu">
+              <a href="catalogue.html">Étudiant</a>
+              <a href="tableau-de-bord.html">Admin</a>
+              <a href="profil-etudiant.html">Mon profil</a>
+              <a href="connexion.html">Se connecter</a>
+              <a href="inscription.html">Créer mon compte ESST</a>
+            </div>
+          </details>
+        </nav>
+      </div>
+    </header>
+
+    <div class="workspace container">
+      <aside class="sidebar">
+        <p class="sidebar__label">Mon espace ESST</p>
+        <nav class="sidebar__nav" aria-label="Menu étudiant">
+          <a class="sidebar__link" href="accueil.html">Accueil ESST</a>
+          <a class="sidebar__link" href="catalogue.html">Catalogue</a>
+          <a class="sidebar__link" href="mes-emprunts.html">Mes emprunts</a>
+          <a class="sidebar__link active" href="historique.html" aria-current="page">Historique</a
+          >
+          <a class="sidebar__link" href="mes-reservations.html">Mes réservations</a
+          >
+          <a class="sidebar__link" href="mes-favoris.html">Mes favoris</a>
+          <a class="sidebar__link" href="mes-avis.html">Mes avis</a>
+          <a class="sidebar__link" href="profil-etudiant.html">Mon profil</a>
+        </nav>
+        <section class="sidebar__note" aria-label="Bibliothèque ESST">
+          <h2>Bibliothèque ESST</h2>
+          <p>Vos ressources pour les cours, les projets et la recherche.</p>
+        </section>
+      </aside>
+
+      <main class="page-content" id="contenu" tabindex="-1">
+        <div class="page-heading">
+          <div>
+            <h1>Historique de mes emprunts</h1>
+            <p class="page-heading__description">
+              Les ressources qui accompagnent votre parcours à l’ESST.
+            </p>
+          </div>
+        </div>
+        <form class="search section-gap" action="historique.html#resultats">
+          <div class="field search__field">
+            <label for="historique-recherche">Rechercher</label
+            ><input id="historique-recherche" type="search" placeholder="Titre ou auteur…"/>
+          </div>
+          <div class="field">
+            <label for="historique-annee">Période</label>
+            <select id="historique-annee">
+              <option>Cette année</option>
+              <option>2025</option>
+              <option>2024</option>
+            </select>
+          </div>
+          <button class="button" type="submit">Rechercher</button>
+        </form>
+        <div class="notice notice--success inline-result" id="resultats">
+          <span class="notice__title">Démonstration confirmée</span>
+          <p>
+            Voici les quatre emprunts de l’historique de démonstration. La
+            recherche libre n’est pas calculée. Aucune donnée n’est enregistrée.
+          </p>
+        </div>
+        <div class="section-gap">
+          <div class="table-wrap">
+            <table class="data-table">
+              <caption class="visually-hidden">
+                Historique des emprunts
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">Ouvrage</th>
+                  <th scope="col">Emprunt</th>
+                  <th scope="col">Retour</th>
+                  <th scope="col">État</th>
+                  <th scope="col">Votre avis</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <a class="data-table__title" href="detail-livre.html">Clean Code</a
+                    >
+                  </td>
+                  <td>02 sept. 2026</td>
+                  <td>16 sept. 2026</td>
+                  <td>Retourné</td>
+                  <td>
+                    <a href="mes-avis.html" aria-label="Voir mon avis sur Clean Code">★★★★★</a
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <a class="data-table__title" href="detail-reseaux.html">Réseaux informatiques</a
+                    >
+                  </td>
+                  <td>21 août 2026</td>
+                  <td>04 sept. 2026</td>
+                  <td>Retourné</td>
+                  <td><a href="#donner-avis">Donner mon avis →</a></td>
+                </tr>
+                <tr>
+                  <td>
+                    <a class="data-table__title" href="detail-algorithmes.html">Introduction aux algorithmes</a
+                    >
+                  </td>
+                  <td>04 août 2026</td>
+                  <td>18 août 2026</td>
+                  <td>Retourné</td>
+                  <td>
+                    <a href="mes-avis.html" aria-label="Voir mon avis sur Introduction aux algorithmes">★★★★★</a
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <a class="data-table__title" href="detail-design.html">Design of Everyday Things</a
+                    >
+                  </td>
+                  <td>12 juil. 2026</td>
+                  <td>26 juil. 2026</td>
+                  <td>Retourné</td>
+                  <td>
+                    <a href="mes-avis.html" aria-label="Voir mon avis sur Design of Everyday Things">★★★★☆</a
+                    >
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="section-gap">
+          <div class="notice">
+            <span class="notice__title">Votre parcours documentaire</span>
+            <p>
+              12 ouvrages empruntés cette année pour vos cours et vos projets.
+            </p>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner container">
+        <a class="site-footer__logo" href="index.html" aria-label="ESST — Accueil">
+          <img
+            src="assets/logo/ESST-logo.png"
+            width="450"
+            height="200"
+            alt="ESST — École Supérieure des Sciences et Technologies"
+          />
+        </a>
+        <p class="site-footer__description">
+          Bibliothèque de l’école · Étudiants · Enseignants · Personnel<br />
+          Simulation HTML/CSS · Données de démonstration
+        </p>
+        <nav class="site-footer__links" aria-label="Navigation de pied de page">
+          <a href="catalogue.html">Catalogue</a>
+          <a href="aide.html">Aide</a>
+          <a href="aide.html#contact">Contact</a>
+          <a href="composants.html">Composants &amp; fenêtres</a>
+        </nav>
+      </div>
+    </footer>
+
+    <section class="modal" id="donner-avis" role="dialog" aria-labelledby="donner-avis-titre" tabindex="-1">
+      <div class="modal__dialog">
+        <a class="modal__close" href="#contenu" aria-label="Fermer la fenêtre">×</a
+        >
+        <h2 id="donner-avis-titre">Votre avis sur Réseaux informatiques</h2>
+
+        <form class="form" action="mes-avis.html#confirmation" method="get">
+          <fieldset>
+            <legend>Votre note</legend>
+            <div class="rating">
+              <input class="visually-hidden" type="radio" name="note" value="5" id="historique-avis-5"/><label for="historique-avis-5"><span aria-hidden="true">★</span
+                ><span class="visually-hidden">5 étoiles</span></label
+              ><input
+                class="visually-hidden"
+                type="radio"
+                name="note"
+                value="4"
+                id="historique-avis-4"
+                checked
+              /><label for="historique-avis-4"><span aria-hidden="true">★</span
+                ><span class="visually-hidden">4 étoiles</span></label
+              ><input class="visually-hidden" type="radio" name="note" value="3" id="historique-avis-3"/><label for="historique-avis-3"><span aria-hidden="true">★</span
+                ><span class="visually-hidden">3 étoiles</span></label
+              ><input class="visually-hidden" type="radio" name="note" value="2" id="historique-avis-2"/><label for="historique-avis-2"><span aria-hidden="true">★</span
+                ><span class="visually-hidden">2 étoiles</span></label
+              ><input class="visually-hidden" type="radio" name="note" value="1" id="historique-avis-1"/><label for="historique-avis-1"><span aria-hidden="true">★</span
+                ><span class="visually-hidden">1 étoile</span></label
+              >
+            </div>
+          </fieldset>
+          <div class="field">
+            <label for="historique-avis-commentaire">Votre commentaire</label>
+            <textarea
+              id="historique-avis-commentaire"
+              placeholder="Votre expérience de lecture…"
+              required
+              maxlength="1000"
+            ></textarea>
+          </div>
+          <div class="actions">
+            <a class="button" href="#contenu">Annuler</a>
+            <button class="button button--primary" type="submit">
+              Publier mon avis
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </body>
+</html>
